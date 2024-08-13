@@ -6,3 +6,9 @@ Created on Tue Aug 13 17:29:49 2024
 @author: maximeb
 """
 
+import streamlit as st
+from gui_functions import *
+
+set_page_config()
+
+st.image('docs/kg.png')

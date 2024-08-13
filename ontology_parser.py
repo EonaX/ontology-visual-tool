@@ -32,6 +32,10 @@ df['imports'] = df['imports_ttl'].combine_first(df['imports_rdf'])
 
 df.drop(['imports_ttl', 'imports_rdf'], axis=1, inplace=True)
 
+    # ad hoc base uri standardization
+
+df['base_uri'] = df['base_uri'].apply(lambda x: remove_suffix(x))
+
     # export
 
-df.to_csv('database_with_imports.csv')
+df.to_pickle('df.pkl')
