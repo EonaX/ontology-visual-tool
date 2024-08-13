@@ -12,14 +12,15 @@ import json
 
 df = pd.DataFrame(
     {
-     "name":["Test Ontology Name"],
-     "provider":["Test Ontology Provider"],
-     "domain":["Test Domain"],
-     "subdomain":["Test Subdomain"],
-     "syntax":["ttl"],
-     "base_uri":["http://www.example.com/base#"],
-     "download_url":["http://www.example/download#"]
-     }
+     "name":pd.Series(dtype='str'),
+     "provider":pd.Series(dtype='str'),
+     "domain":pd.Series(dtype='str'),
+     "subdomain":pd.Series(dtype='str'),
+     "syntax":pd.Series(dtype='str'),
+     "base_uri":pd.Series(dtype='str'),
+     "download_url":pd.Series(dtype='str')
+     },
+    index=pd.RangeIndex(0)
     )
 
 json_schema =json.dumps(build_table_schema(df, version=False), indent=4)
