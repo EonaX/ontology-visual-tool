@@ -9,7 +9,7 @@ It is composed of three components:
  + a graph constructor in the back-end
  + a graph visualizer in the front-end
 
-### Ontology Database
+### Ontology Database Manager
  + ontology data modeling
  + DBMS (pandas)
  + GUI (Streamlit)
@@ -21,7 +21,12 @@ It is composed of three components:
 ### Graph visualizer
  + either vOWL or Neo4J's visual renderer
 
-## Data Modeling
+## Ontology Database Manager
+
+### Functional Schema
+![Functional Schema](docs/20240808_data_quality_scoring_tool_python_project_architecture)
+
+### Data Modeling
 Concerning the relational database, it consists in one table **Ontology** with these following properties:
  + id
  + name
