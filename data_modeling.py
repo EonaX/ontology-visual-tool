@@ -27,12 +27,16 @@ df_schema = pd.DataFrame(
 
 df_schema.to_csv('database.csv')
 
-    # json schema constraints
+    # json schema
 
 json_schema =build_table_schema(df_schema, version=False)
 
+    # constraint rules
+json_schema['fields'][2]['enumerate'] = ['Tourism', 'Transport', 'Mobility', 'Cross-Domain', 'Data']
+json_schema['fields'][4]['pattern'] = r"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
+json_schema['fields'][5]['pattern'] = r"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
 json_schema['fields'][6]['enumerate'] = ['RDF/XML', 'Turtle', 'JSON-LD', 'TriG', 'N-Quads', 'N-Triples', 'N3']
-json_schema['fields'][5]['']
+
 
     # json schema export
 

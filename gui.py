@@ -27,10 +27,11 @@ with open('ontology.schema', 'r') as f:
 
     # submission process
 
-form = st.form(key='my-form', clear_on_submit=True)
+form = st.form(key='my-form', clear_on_submit=False)
 name = form.text_input('Name')
 provider = form.text_input('Provider')
-domain = form.text_input('Domain')
+domain = form.selectbox('Domain',
+                        options = json_schema['fields'][2]['enumerate'])
 base_uri = form.text_input('Preffered Base URI')
 download_url = form.text_input('Latest Version Download URL')
 syntax = form.selectbox('Syntax',
@@ -44,6 +45,9 @@ if submit:
     
     list_of_properties = [name, provider, domain, base_uri, download_url, syntax]
     
-    add_ontology(df, list_of_properties)
+    error_message = add_ontology(df, list_of_properties)
     
-    st.write("Ontology submitted.")
+    if error_message:
+        st.write(error_message)
+    else:
+        st.write("Ontology submitted.")

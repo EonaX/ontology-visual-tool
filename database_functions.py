@@ -5,6 +5,7 @@ Created on Tue Aug 13 12:21:36 2024
 
 @author: maximeb
 """
+import re
 
 def add_ontology(df, list_of_properties):
     """
@@ -23,9 +24,15 @@ def add_ontology(df, list_of_properties):
         DESCRIPTION.
 
     """
+    error_message = check_constraints(list_of_properties)
+    
+    if error_message:
+        return error_message
+    
+    apply_constraints(list_of_properties)
+    
     df.loc[len(df)] = list_of_properties
     df.to_csv('database.csv')
-    return df
 
 def remove_ontology(df, index_number):
     """
@@ -50,5 +57,43 @@ def remove_ontology(df, index_number):
     
     return df
 
+def apply_constraints(list_of_properties):
+    """
+    Automatic changes applied to the different fields.
+
+    Parameters
+    ----------
+    list_of_properties : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    list_of_properties : TYPE
+        DESCRIPTION.
+
+    """
+    list_of_properties[0] = list_of_properties[0].title()
+    list_of_properties[1] = list_of_properties[1].title()
+    return list_of_properties
+
 def check_constraints(list_of_properties):
-    return
+    """
+    Checks if the constraints are respected.
+
+    Parameters
+    ----------
+    list_of_properties : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    error_message : TYPE
+        DESCRIPTION.
+
+    """
+    if list_of_properties[3].startswith('http://') == False or list_of_properties[3].startswith('https://'):
+        error_message = 'Base URI address not valid.'
+        return error_message
+    elif list_of_properties[4].startswith('http://') == False or list_of_properties[4].startswith('https://'):
+        error_message = 'Download URL address not valid.'
+        return error_message

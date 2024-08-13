@@ -10,7 +10,14 @@
         },
         {
             "name": "provider",
-            "type": "string"
+            "type": "string",
+            "enumerate": [
+                "Tourism",
+                "Transport",
+                "Mobility",
+                "Cross-Domain",
+                "Data"
+            ]
         },
         {
             "name": "domain",
@@ -18,11 +25,13 @@
         },
         {
             "name": "base_uri",
-            "type": "string"
+            "type": "string",
+            "pattern": "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$"
         },
         {
             "name": "download_url",
-            "type": "string"
+            "type": "string",
+            "pattern": "^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$"
         },
         {
             "name": "syntax",
