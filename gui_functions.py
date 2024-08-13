@@ -39,7 +39,7 @@ def count_line_graph(df):
                     
     
     fig.update_layout(
-        title = '<b>Ontology Adding Over Time</b>',
+        title = '<b>Ontology Count Over Time</b>',
 
         )
     return fig
@@ -55,8 +55,8 @@ def ontology_count_metric(df):
         ))
     
     fig.update_layout(
-        title = '<b>Number of Ontology</b>',
-        margin=dict(l=20, r=20, t=100, b=250),
+        title = '<b>Total Ontology Count</b>',
+        margin=dict(l=20, r=20, t=55, b=250),
         )
 
     
