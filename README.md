@@ -22,7 +22,7 @@ It is composed of three components:
  + either vOWL or Neo4J's visual renderer
 
 ## Data Modeling
-Concerning the relational database, it consists in one table *Ontology* with these following properties:
+Concerning the relational database, it consists in one table **Ontology** with these following properties:
  + id
  + name
  + domain
