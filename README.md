@@ -24,7 +24,7 @@ It is composed of three components:
 ## Ontology Database Manager
 
 ### Functional Schema
-![Functional Schema](docs/20240808_data_quality_scoring_tool_python_project_architecture)
+![Functional Schema](docs/20240808_data_quality_scoring_tool_python_project_architecture.png)
 
 ### Data Modeling
 Concerning the relational database, it consists in one table **Ontology** with these following properties:
