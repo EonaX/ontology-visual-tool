@@ -1,0 +1,39 @@
+{
+    "fields": [
+        {
+            "name": "index",
+            "type": "integer"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "provider",
+            "type": "string"
+        },
+        {
+            "name": "domain",
+            "type": "string"
+        },
+        {
+            "name": "subdomain",
+            "type": "string"
+        },
+        {
+            "name": "syntax",
+            "type": "string"
+        },
+        {
+            "name": "base_uri",
+            "type": "string"
+        },
+        {
+            "name": "download_url",
+            "type": "string"
+        }
+    ],
+    "primaryKey": [
+        "index"
+    ]
+}
