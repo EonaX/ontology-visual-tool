@@ -21,13 +21,38 @@ df = pd.read_csv('database.csv', index_col=0)
 
 st.title('Ontology Database Manager')
 
-st.metric(label='Total Number of Ontology:', value=len(df))
 
     # database df visualizer
 
 st.header('Ontology Database Viewer')
 
-st.dataframe(df, use_container_width=True)
+st.dataframe(df, use_container_width=True, 
+             column_order=["provider", "name", "domain", "base_uri", "download_url", "syntax", "added_when"],
+             column_config={
+                 "_index":"ID",
+                 "name":"Name",
+                 "provider":"Provider",
+                 "domain":"Domain",
+                 "base_uri":"Base URI",
+                 "download_url":"Download URL",
+                 "syntax":"Serialization",
+                 "added_when":"Added On"
+                 })
+
+    # dash board
+
+col1, col2 = st.columns([6,2])
+
+with col1:
+    bar_graph = count_line_graph(df)
+    st.plotly_chart(bar_graph, use_container_width=True)
+
+with col2:
+    
+    ontology_count = ontology_count_metric(df)
+    st.plotly_chart(ontology_count, use_container_width=True)
+    #st.metric(label='Number of Ontology:', value=len(df), size=100f)
+
 
     # ontology remover
 

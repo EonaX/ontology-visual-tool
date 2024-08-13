@@ -1,3 +1,8 @@
-,name,provider,domain,base_uri,download_url,syntax
-0,Ontology Test Loiehj,Ontology Test Loiehj,Tourism,zef,zef,RDF/XML
-1,Azd,Azddd Azd,Tourism,http://,http://,RDF/XML
+,name,provider,domain,base_uri,download_url,syntax,added_when
+0,Vehicle,Catena-X,Transport,https://w3id.org/catenax/ontology/vehicle#,https://raw.githubusercontent.com/catenax-ng/product-ontology/main/ontology/vehicle_ontology.ttl,Turtle,2024-08-11
+1,Dcat,W3C,Data,http://www.w3.org/ns/dcat#,https://www.w3.org/ns/dcat2.ttl,Turtle,2024-08-12
+2,Datatourisme,Adn-Tourisme,Tourism,https://www.datatourisme.fr/ontology/core,https://www.datatourisme.fr/ontology/core/ontology.ttl,Turtle,2024-08-12
+3,Era,European Union Agency For Railways,Transport,http://data.europa.eu/949/,https://data-interop.era.europa.eu/era-vocabulary/ontology.ttl,Turtle,2024-08-13
+4,Core Ontology,Gaia-X,Data,http://w3id.org/gaia-x/core#,https://gaia-x.gitlab.io/gaia-x-community/gaia-x-self-descriptions/core/ontology.ttl,Turtle,2024-08-13
+5,Odrl,W3C,Data,http://www.w3.org/ns/odrl/2/,https://www.w3.org/ns/odrl/2/ODRL22.ttl,Turtle,2024-08-13
+6,Metadata Terms,Dublin Core,Data,http://purl.org/dc/elements/1.1/,https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl,Turtle,2024-08-13

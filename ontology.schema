@@ -45,6 +45,10 @@
                 "N-Triples",
                 "N3"
             ]
+        },
+        {
+            "name": "added_when",
+            "type": "string"
         }
     ],
     "primaryKey": [

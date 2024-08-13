@@ -11,6 +11,7 @@ from database_functions import *
 from gui_functions import *
 import pandas as pd
 import json
+import datetime
 
 set_page_config()
 
@@ -27,14 +28,14 @@ with open('ontology.schema', 'r') as f:
 
     # submission process
 
-form = st.form(key='my-form', clear_on_submit=False)
+form = st.form(key='my-form', clear_on_submit=True)
 name = form.text_input('Name')
 provider = form.text_input('Provider')
 domain = form.selectbox('Domain',
                         options = json_schema['fields'][2]['enumerate'])
-base_uri = form.text_input('Preffered Base URI')
-download_url = form.text_input('Latest Version Download URL')
-syntax = form.selectbox('Syntax',
+base_uri = form.text_input('Base URI')
+download_url = form.text_input('Download URL')
+syntax = form.selectbox('Serialization',
                         options = json_schema['fields'][6]['enumerate']
                         )
 submit = form.form_submit_button('Submit')
@@ -43,7 +44,9 @@ submit = form.form_submit_button('Submit')
 
 if submit:
     
-    list_of_properties = [name, provider, domain, base_uri, download_url, syntax]
+    today = str(datetime.date.today())
+    
+    list_of_properties = [name, provider, domain, base_uri, download_url, syntax, today]
     
     error_message = add_ontology(df, list_of_properties)
     

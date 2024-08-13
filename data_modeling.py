@@ -20,12 +20,13 @@ df_schema = pd.DataFrame(
      "base_uri":pd.Series(dtype='str'),
      "download_url":pd.Series(dtype='str'),
      "syntax":pd.Series(dtype='str'),
+     "added_when":pd.Series(dtype='str')
      }
     )
 
     # csv export
 
-df_schema.to_csv('database.csv')
+df_schema.to_csv('database_schema.csv')
 
     # json schema
 

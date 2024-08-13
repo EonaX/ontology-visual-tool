@@ -91,9 +91,16 @@ def check_constraints(list_of_properties):
         DESCRIPTION.
 
     """
-    if list_of_properties[3].startswith('http://') == False or list_of_properties[3].startswith('https://'):
+    
+    if list_of_properties[0] == "" or list_of_properties[0] == None:
+        error_message = 'Name is empty.'
+        return error_message
+    if list_of_properties[1] == "" or list_of_properties[1] == None:
+        error_message = 'Provider is empty.'
+        return error_message
+    if list_of_properties[3].startswith('http://') == False and list_of_properties[3].startswith('https://') == False:
         error_message = 'Base URI address not valid.'
         return error_message
-    elif list_of_properties[4].startswith('http://') == False or list_of_properties[4].startswith('https://'):
+    if list_of_properties[4].startswith('http://') == False and list_of_properties[4].startswith('https://') == False:
         error_message = 'Download URL address not valid.'
         return error_message
