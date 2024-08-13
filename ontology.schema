@@ -26,7 +26,16 @@
         },
         {
             "name": "syntax",
-            "type": "string"
+            "type": "string",
+            "enumerate": [
+                "RDF/XML",
+                "Turtle",
+                "JSON-LD",
+                "TriG",
+                "N-Quads",
+                "N-Triples",
+                "N3"
+            ]
         }
     ],
     "primaryKey": [

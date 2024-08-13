@@ -49,3 +49,6 @@ def remove_ontology(df, index_number):
     df.to_csv('database.csv')
     
     return df
+
+def check_constraints(list_of_properties):
+    return

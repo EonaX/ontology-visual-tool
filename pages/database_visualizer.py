@@ -9,6 +9,9 @@ Created on Tue Aug 13 12:15:38 2024
 import streamlit as st
 import pandas as pd
 from database_functions import *
+from gui_functions import *
+
+set_page_config()
 
     # variables
 

@@ -27,9 +27,16 @@ df_schema = pd.DataFrame(
 
 df_schema.to_csv('database.csv')
 
+    # json schema constraints
+
+json_schema =build_table_schema(df_schema, version=False)
+
+json_schema['fields'][6]['enumerate'] = ['RDF/XML', 'Turtle', 'JSON-LD', 'TriG', 'N-Quads', 'N-Triples', 'N3']
+json_schema['fields'][5]['']
+
     # json schema export
 
-json_schema =json.dumps(build_table_schema(df_schema, version=False), indent=4)
+json_schema =json.dumps(json_schema, indent=4)
 
 with open('ontology.schema', "w") as f:
     f.write(json_schema)
