@@ -2,7 +2,7 @@
     "fields": [
         {
             "name": "index",
-            "type": "integer"
+            "type": "string"
         },
         {
             "name": "name",
@@ -17,19 +17,15 @@
             "type": "string"
         },
         {
-            "name": "subdomain",
-            "type": "string"
-        },
-        {
-            "name": "syntax",
-            "type": "string"
-        },
-        {
             "name": "base_uri",
             "type": "string"
         },
         {
             "name": "download_url",
+            "type": "string"
+        },
+        {
+            "name": "syntax",
             "type": "string"
         }
     ],
