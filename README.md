@@ -5,9 +5,6 @@ This tool provides a visual knowledge graph representation of the ontologies ide
 
 ## Components
 It is composed of three components:
- + a writeable relational database with GUI
- + a graph constructor in the back-end
- + a graph visualizer in the front-end
 
 ### Ontology Database Manager
  + ontology data modeling
