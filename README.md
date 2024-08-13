@@ -9,16 +9,16 @@ It is composed of three components:
  + a graph constructor in the back-end
  + a graph visualizer in the front-end
 
-**Ontology directory database:**
+### Ontology Database
  + ontology data modeling
  + DBMS (pandas)
  + GUI (Streamlit)
 
-**Graph constructor:**
+### Graph constructor
  + RDF/OWL parser
  + RDF knowledge graph constructor
 
-**Graph visualizer:**
+### Graph visualizer
  + either vOWL or Neo4J's visual renderer
 
 ## Data Modeling
