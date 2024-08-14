@@ -5,7 +5,6 @@ Created on Tue Aug 13 12:21:36 2024
 
 @author: maximeb
 """
-import re
 
 def add_ontology(df, list_of_properties):
     """

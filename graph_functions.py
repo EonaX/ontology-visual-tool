@@ -11,7 +11,6 @@ from rdflib.extras.external_graph_libs import *
 from rdflib import Namespace, Graph, Literal, URIRef
 import networkx as nx
 import matplotlib.pyplot as plt
-import pygraphviz as pgv
 
 forbidden_uris = ['http://www.w3.org/2002/07/owl', 
                   'http://www.w3.org/1999/02/22-rdf-syntax-ns', 
