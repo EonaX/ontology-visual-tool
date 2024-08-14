@@ -1,4 +1,4 @@
-# ontology-visual-tool
+# Ontology Tracking Visual Tool
 
 ## Presentation
 This tool provides a visual knowledge graph representation of the ontologies identified as relevant for Eona-X by its members and their interrelations. Its ontology database can be updated by anyone through a graphical user interface reachable on the web, resulting in a modification of the visual representation.
