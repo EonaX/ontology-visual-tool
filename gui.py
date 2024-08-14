@@ -21,9 +21,9 @@ st.header('Ontology Submission Form')
 
     # load the database
 
-df = pd.read_csv('database.csv', index_col=0)
+df = pd.read_csv('data/database.csv', index_col=0)
 
-with open('ontology.schema', 'r') as f:
+with open('data/ontology.schema', 'r') as f:
     json_schema = json.loads(f.read())
 
     # submission process
