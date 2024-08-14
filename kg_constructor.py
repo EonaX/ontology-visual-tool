@@ -11,7 +11,7 @@ from rdflib import Namespace
 from rdflib.namespace import RDF
 import pandas as pd
 
-df = pd.read_pickle('df.pkl') 
+df = pd.read_pickle('data/df.pkl') 
 
 EONA = Namespace("http://www.eona-x.eu/ontology/tracking/")
 kg_ontology = Graph()
@@ -61,4 +61,4 @@ for base_uri in df['base_uri']:
 
     # Save KG
 
-kg_ontology.serialize(destination="kg.ttl")
+kg_ontology.serialize(destination="data/kg.ttl")

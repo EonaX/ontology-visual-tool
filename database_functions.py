@@ -32,7 +32,7 @@ def add_ontology(df, list_of_properties):
     apply_constraints(list_of_properties)
     
     df.loc[len(df)] = list_of_properties
-    df.to_csv('database.csv')
+    df.to_csv('data/database.csv')
 
 def remove_ontology(df, index_number):
     """
@@ -53,7 +53,7 @@ def remove_ontology(df, index_number):
     """
     df.drop(index=index_number, inplace=True)
     df.reset_index(drop=True, inplace=True)
-    df.to_csv('database.csv')
+    df.to_csv('data/database.csv')
     
     return df
 
