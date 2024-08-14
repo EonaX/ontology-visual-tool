@@ -22,13 +22,34 @@ forbidden_uris = ['http://www.w3.org/2002/07/owl',
 
 # Ontology functions
 
-def extract_imports_ttl(url):
+def download_ontology(url):
     """
-    Extract all base URIS of ontologies imported in Turtle ontology.
+    Download the ontology from the given download_url.
 
     Parameters
     ----------
-    url : TYPE
+    url : str
+        DESCRIPTION.
+
+    Returns
+    -------
+    ontology : str
+        DESCRIPTION.
+
+    """
+    r = requests.get(url)
+
+    ontology = r.text
+    
+    return ontology
+
+def extract_imports_ttl(url):
+    """
+    Extracts all base URIS of ontologies used in a Turtle-serialized ontology.
+
+    Parameters
+    ----------
+    url : str
         DESCRIPTION.
 
     Returns
@@ -37,9 +58,7 @@ def extract_imports_ttl(url):
         DESCRIPTION.
 
     """
-    r = requests.get(url)
-
-    ontology = r.text
+    ontology = download_ontology(url)
 
     ontology = ontology.split('prefix')[1:]
 
@@ -68,11 +87,11 @@ def extract_imports_ttl(url):
 
 def extract_imports_rdf(url="http://xmlns.com/foaf/spec/index.rdf"):
     """
-    Extract all base URIS of ontologies imported in a RDF/XML ontology.
+    Extract all base URIS of ontologies used in a RDF/XML-serialized ontology.
 
     Parameters
     ----------
-    url : TYPE, optional
+    url : str, optional
         DESCRIPTION. The default is "http://xmlns.com/foaf/spec/index.rdf".
 
     Returns
@@ -81,9 +100,7 @@ def extract_imports_rdf(url="http://xmlns.com/foaf/spec/index.rdf"):
         DESCRIPTION.
 
     """
-    r = requests.get(url)
-
-    ontology = r.text
+    ontology = download_ontology(url)
     
     imports_list = []
           
@@ -106,7 +123,20 @@ def extract_imports_rdf(url="http://xmlns.com/foaf/spec/index.rdf"):
         imports_list=['IndexError']
         
 def check_forbidden_uris(uri):
-    
+    """
+    List of all-too-common namespaces.
+
+    Parameters
+    ----------
+    uri : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    bool
+        DESCRIPTION.
+
+    """
     forbidden_uris = ['http://www.w3.org/2002/07/owl#', 
                       'http://www.w3.org/1999/02/22-rdf-syntax-ns#', 
                       'http://www.w3.org/2000/01/rdf-schema#',
@@ -120,7 +150,20 @@ def check_forbidden_uris(uri):
             return False
         
 def remove_suffix(uri):
-    
+    """
+    Remove usual suffixes ('#' and '/') in order to avoid duplicates in graph viz.
+
+    Parameters
+    ----------
+    uri : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    uri : TYPE
+        DESCRIPTION.
+
+    """
     if uri[-1]=='#':
         uri = uri[:-1]
     if uri[-1]=='/':
@@ -130,21 +173,40 @@ def remove_suffix(uri):
 
 # Knowledge graph functions
 
-def construct_graph(path = "data/kg.ttl", format="ttl"):
+def construct_graph(path, format): # don't work    
     g = Graph()
-    EONA = Namespace("http://www.eona-x.eu/ontology/tracking/")
+    g.parse(path=path, format=format)
+    EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
     g.bind("eona", EONA)
     g.parse(path=path, format=format)
     
     return g
 
-def filter_graph(g):
+def filter_graph(g, NAMESPACE, option):
+    """
+    Apply graph data manipulations.
+
+    Parameters
+    ----------
+    g : TYPE
+        DESCRIPTION.
+    NAMESPACE : TYPE
+        DESCRIPTION.
+    option : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    subgraph : TYPE
+        DESCRIPTION.
+
+    """
     subgraph = Graph()
-    subgraph.bind("eona", EONA)
+    subgraph.bind("eona", NAMESPACE)
     
         # keep only eona:imports relations
     
-    subgraph += g.triples((None, EONA.imports, None))
+    subgraph += g.triples((None, NAMESPACE[option], None))
     
         # remove forbidden uris
     
@@ -155,17 +217,41 @@ def filter_graph(g):
     return subgraph
 
 def draw_graph(g):
+    """
+    Convert to Network-X type that allows matplotlib visualization.
+
+    Parameters
+    ----------
+    g : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    
+    # conversion
+    
     nx_graph = rdflib_to_networkx_multidigraph(g)
     
-        # drawing
+    # drawing
     
-    options = {
-        'node_color': 'white',
-        'node_size': 200,
-        'width': 1.2,
-    }
+        # options
+            
+    node_options = {"node_size": 2500, "edgecolors": "grey", "linewidths": 2.0, 'cmap':'viridis'}
+    label_options = {"font_size":14, 'font_color':"white"}
+    edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':15, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
+    pos = nx.circular_layout(nx_graph)
+    
+        # plt
     
     plt.figure(figsize=(19.2,10.8*1.2))
-    nx.draw_circular(nx_graph, with_labels=True)
+    plt.axes(frameon=False)
+    nx.draw_networkx_nodes(nx_graph, pos, **node_options)
+    nx.draw_networkx_labels(nx_graph, pos, **label_options)
+    nx.draw_networkx_edges(nx_graph, pos, **edge_options)
+    
+        # export to svg
     plt.tight_layout()
     plt.savefig('data/kg.svg', format='svg', transparent=True)

@@ -7,7 +7,7 @@ Created on Tue Aug 13 18:12:46 2024
 """
 
 import pandas as pd
-from ontology_functions import *
+from graph_functions import *
 
 df = pd.read_csv('data/database.csv', index_col=0)
 url = df.iloc[0]['download_url']
@@ -39,3 +39,6 @@ df['base_uri'] = df['base_uri'].apply(lambda x: remove_suffix(x))
     # export
 
 df.to_pickle('data/df.pkl')
+
+with open('data/test.txt', 'w') as f:
+    f.write('')

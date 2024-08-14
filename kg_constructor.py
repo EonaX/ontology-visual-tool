@@ -13,9 +13,10 @@ import pandas as pd
 
 df = pd.read_pickle('data/df.pkl') 
 
-EONA = Namespace("http://www.eona-x.eu/ontology/tracking/")
+EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
 kg_ontology = Graph()
 kg_ontology.bind("eona", EONA)
+
     # Instances creation
         
         # set of unique URIs

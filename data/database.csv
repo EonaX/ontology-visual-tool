@@ -19,3 +19,4 @@
 17,Vehicle,University Of Toronto,Transport,http://ontology.eil.utoronto.ca/icity/Vehicle/,https://enterpriseintegrationlab.github.io/icity/Vehicle/Vehicle_1.2/doc/ontology.ttl,Turtle,2024-08-13
 18,Geosparql,Open Gis,Cross-Domain,http://www.opengis.net/ont/geosparql/,http://www.opengis.net/ont/geosparql,Turtle,2024-08-13
 19,Schema.Org,Schema.Org,Cross-Domain,https://schema.org/,https://schema.org/,RDF/XML,2024-08-13
+20,Data Quality,W3C,Data,http://www.w3.org/ns/dqv#,https://raw.githubusercontent.com/w3c/dwbp/gh-pages/dqv.ttl,Turtle,2024-08-14

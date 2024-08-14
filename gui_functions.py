@@ -11,7 +11,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-def set_page_config():
+def set_page_config(layout="centered"):
     """
     Layout configuration settings.
 
@@ -24,7 +24,7 @@ def set_page_config():
     st.set_page_config(
         page_title="Real-Time Data Science Dashboard",
         page_icon="docs/logo-eona.png",
-        layout="centered",
+        layout=layout,
     )
 
 def count_line_graph(df):
