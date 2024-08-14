@@ -39,6 +39,3 @@ df['base_uri'] = df['base_uri'].apply(lambda x: remove_suffix(x))
     # export
 
 df.to_pickle('data/df.pkl')
-
-with open('data/test.txt', 'w') as f:
-    f.write('')

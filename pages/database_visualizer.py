@@ -10,6 +10,8 @@ import streamlit as st
 import pandas as pd
 from database_functions import *
 from gui_functions import *
+from graph_functions import *
+from rdflib import Graph, Namespace
 
 set_page_config()
 
@@ -56,6 +58,33 @@ with col2:
     
     ontology_count = ontology_count_metric(df)
     st.plotly_chart(ontology_count, use_container_width=True)
+    
+
+# Graph Visualizer
+
+    # Display
+
+st.image('data/kg.svg')
+
+    # Update
+    
+update_graph_button = st.button('Update Knowledge Graph')
+    
+if update_graph_button:
+    with st.spinner('Parsing ontologies...'):
+        import ontology_parser
+    with st.spinner('Constructing the knowledge graph...'):
+        import kg_constructor
+    
+    with st.spinner('Generating Graph...'):
+        g = Graph()
+        EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
+        g.bind("eona", EONA)
+        g.parse("data/kg.ttl", format="ttl")
+        
+        g = filter_graph(g, NAMESPACE=EONA, option='imports')
+        save_graph(g, 'data/sub_kg.ttl')        
+        draw_graph(g)
 
     # ontology remover
 

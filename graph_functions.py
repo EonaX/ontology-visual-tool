@@ -208,17 +208,66 @@ def filter_graph(g, NAMESPACE, option):
     
     subgraph += g.triples((None, NAMESPACE[option], None))
     
+        # keep also names
+    
+    # subgraph += g.triples((None, NAMESPACE.isNamed, None))
+    
         # remove forbidden uris
     
     for n in forbidden_uris:
         subgraph.remove((None, None, Literal(n)))
         subgraph.remove((None, None, URIRef(n)))
+        
+        # remove reflexive triples
+        
+    for s, p, o in g:
+        if s == o:
+            subgraph.remove((s, p, o))
     
     return subgraph
 
-def draw_graph(g):
+def save_graph(graph, destination):
     """
-    Convert to Network-X type that allows matplotlib visualization.
+    Save the graph to the destination given.
+
+    Parameters
+    ----------
+    graph : rdflib Graph
+        DESCRIPTION.
+    destination : str
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    graph.serialize(destination)
+    print(f"saved at {destination}")
+
+def convert_to_nx(rdflib_graph):
+    """
+    Converts a rdflib graph to a networkx graph.
+
+    Parameters
+    ----------
+    rdflib_graph : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    nx_graph : TYPE
+        DESCRIPTION.
+
+    """
+    
+    nx_graph = rdflib_to_networkx_multidigraph(rdflib_graph)
+    
+    return nx_graph
+
+def draw_graph(rdflib_graph):
+    """
+    Froma rdflib graph, it displays a Matplotlib graph visualization.
 
     Parameters
     ----------
@@ -230,11 +279,7 @@ def draw_graph(g):
     None.
 
     """
-    
-    # conversion
-    
-    nx_graph = rdflib_to_networkx_multidigraph(g)
-    
+    nx_graph = convert_to_nx(rdflib_graph)
     # drawing
     
         # options
@@ -243,10 +288,10 @@ def draw_graph(g):
     label_options = {"font_size":14, 'font_color':"white"}
     edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':15, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
     pos = nx.circular_layout(nx_graph)
-    
+    # pos = nx.nx_agraph.graphviz_layout(nx_graph, prog="neato")
         # plt
     
-    plt.figure(figsize=(19.2,10.8*1.2))
+    plt.figure(figsize=(19.2,10.8*1.3))
     plt.axes(frameon=False)
     nx.draw_networkx_nodes(nx_graph, pos, **node_options)
     nx.draw_networkx_labels(nx_graph, pos, **label_options)

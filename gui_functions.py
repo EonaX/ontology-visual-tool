@@ -45,17 +45,16 @@ def count_line_graph(df):
     count_df = df.groupby(['added_when']).count()
     fig = px.line(count_df, 
                   x=count_df.index, 
-                  y=count_df['name'],                   
-                  height=300,
+                  y=count_df['name'],
                   labels = {
                       'added_when': 'Date',
                       'name': 'Count'
                       })
                     
-    
     fig.update_layout(
         title = '<b>Ontology Count Over Time</b>',
-
+        margin=dict(t=20, b=20), 
+        height=200
         )
     return fig
 
@@ -85,7 +84,8 @@ def ontology_count_metric(df):
     
     fig.update_layout(
         title = '<b>Total Ontology Count</b>',
-        margin=dict(l=20, r=20, t=55, b=250),
+        margin=dict(l=0, r=0, t=20, b=20),
+        height=200
         )
 
     return fig
