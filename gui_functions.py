@@ -27,7 +27,7 @@ def set_page_config(layout="centered"):
         layout=layout,
     )
 
-def count_line_graph(df):
+def count_line_graph(df, title):
     """
     Line Graph to display daily ontology submission count.
 
@@ -52,13 +52,13 @@ def count_line_graph(df):
                       })
                     
     fig.update_layout(
-        title = '<b>Ontology Count Over Time</b>',
+        title = title,
         margin=dict(t=20, b=20), 
         height=200
         )
     return fig
 
-def ontology_count_metric(df):
+def ontology_count_metric(iterator, title):
     """
     Total ontology count.
 
@@ -74,7 +74,7 @@ def ontology_count_metric(df):
 
     """
 
-    count = len(df)    
+    count = len(iterator)    
     
     fig = go.Figure(go.Indicator(
         
@@ -83,7 +83,7 @@ def ontology_count_metric(df):
         ))
     
     fig.update_layout(
-        title = '<b>Total Ontology Count</b>',
+        title = title,
         margin=dict(l=0, r=0, t=20, b=20),
         height=200
         )

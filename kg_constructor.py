@@ -9,6 +9,7 @@ Created on Tue Aug 13 19:44:14 2024
 from rdflib import URIRef, BNode, Literal, Graph
 from rdflib import Namespace
 from rdflib.namespace import RDF
+from database_functions import *
 import pandas as pd
 
 df = pd.read_pickle('data/df.pkl') 
@@ -21,12 +22,7 @@ kg_ontology.bind("eona", EONA)
         
         # set of unique URIs
 
-set_uris = set()
-
-for list_of_uris in df['imports']:
-    if type(list_of_uris)==list:
-        for uri in list_of_uris:
-            set_uris.add(uri)
+set_uris = get_set_of_ontologies(df)
 
         # instantiations of Ontology class
 

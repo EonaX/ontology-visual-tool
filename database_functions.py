@@ -104,3 +104,14 @@ def check_constraints(list_of_properties):
     if list_of_properties[4].startswith('http://') == False and list_of_properties[4].startswith('https://') == False:
         error_message = 'Download URL address not valid.'
         return error_message
+    
+    
+def get_set_of_ontologies(df):
+    set_uris = set()
+
+    for list_of_uris in df['imports']:
+        if type(list_of_uris)==list:
+            for uri in list_of_uris:
+                set_uris.add(uri)
+                
+    return set_uris
