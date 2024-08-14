@@ -15,7 +15,7 @@ set_page_config()
 
     # variables
 
-df = pd.read_csv('database.csv', index_col=0)
+df = pd.read_csv('data/database.csv', index_col=0)
 
     # page layout
 
@@ -44,15 +44,18 @@ st.dataframe(df, use_container_width=True,
 col1, col2 = st.columns([6,2])
 
 with col1:
+    
+        # bar graph
+    
     bar_graph = count_line_graph(df)
     st.plotly_chart(bar_graph, use_container_width=True)
 
 with col2:
     
+        # count metric
+    
     ontology_count = ontology_count_metric(df)
     st.plotly_chart(ontology_count, use_container_width=True)
-    #st.metric(label='Number of Ontology:', value=len(df), size=100f)
-
 
     # ontology remover
 

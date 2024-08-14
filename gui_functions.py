@@ -20,6 +20,7 @@ def set_page_config():
     None.
 
     """
+    
     st.set_page_config(
         page_title="Real-Time Data Science Dashboard",
         page_icon="docs/logo-eona.png",
@@ -27,6 +28,20 @@ def set_page_config():
     )
 
 def count_line_graph(df):
+    """
+    Line Graph to display daily ontology submission count.
+
+    Parameters
+    ----------
+    df : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    fig : TYPE
+        DESCRIPTION.
+
+    """
     count_df = df.groupby(['added_when']).count()
     fig = px.line(count_df, 
                   x=count_df.index, 
@@ -45,6 +60,20 @@ def count_line_graph(df):
     return fig
 
 def ontology_count_metric(df):
+    """
+    Total ontology count.
+
+    Parameters
+    ----------
+    df : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    fig : TYPE
+        DESCRIPTION.
+
+    """
 
     count = len(df)    
     
@@ -59,5 +88,4 @@ def ontology_count_metric(df):
         margin=dict(l=20, r=20, t=55, b=250),
         )
 
-    
     return fig
