@@ -8,11 +8,11 @@ Created on Tue Aug 13 18:41:47 2024
 
 import requests
 
-forbidden_uris = ['http://www.w3.org/2002/07/owl#', 
-                  'http://www.w3.org/1999/02/22-rdf-syntax-ns#', 
-                  'http://www.w3.org/2000/01/rdf-schema#',
+forbidden_uris = ['http://www.w3.org/2002/07/owl', 
+                  'http://www.w3.org/1999/02/22-rdf-syntax-ns', 
+                  'http://www.w3.org/2000/01/rdf-schema',
                   'http://www.w3.org/XML/1998/namespace',
-                  'http://www.w3.org/2001/XMLSchema#'
+                  'http://www.w3.org/2001/XMLSchema'
                   ]
 
 def extract_imports_ttl(url):

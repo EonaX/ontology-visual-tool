@@ -20,6 +20,7 @@ def set_page_config():
     None.
 
     """
+    
     st.set_page_config(
         page_title="Real-Time Data Science Dashboard",
         page_icon="docs/logo-eona.png",

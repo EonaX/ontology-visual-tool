@@ -1,148 +1,76 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><graph edgedefault="directed"><node id="https://www.datatourisme.fr/ontology/core"/>
-<node id="http://www.w3.org/2002/07/owl"/>
-<node id="http://xmlns.com/foaf/0.1"/>
-<node id="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
-<node id="http://purl.org/vocab/vann"/>
-<node id="http://purl.org/dc/terms"/>
 <node id="http://www.w3.org/ns/dcat"/>
-<node id="http://purl.org/dc/elements/1.1"/>
-<node id="http://www.w3.org/2004/02/skos/core"/>
-<node id="http://www.w3.org/ns/odrl/2"/>
-<node id="http://www.w3.org/2006/vcard/ns"/>
+<node id="http://xmlns.com/foaf/0.1"/>
 <node id="https://w3id.org/catenax/ontology/vehicle"/>
-<node id="http://purl.org/dc/dcmitype"/>
-<node id="http://w3id.org/gaia-x/core"/>
-<node id="http://www.w3.org/2001/XMLSchema"/>
+<node id="https://w3id.org/catenax/ontology/core"/>
+<node id="http://www.w3.org/ns/odrl/2"/>
+<node id="http://purl.org/dc/elements/1.1"/>
+<node id="http://purl.org/dc/dcam"/>
+<node id="http://purl.org/vocab/vann"/>
+<node id="http://purl.org/vocab/bio/0.1"/>
+<node id="http://www.w3.org/2006/vcard/ns"/>
+<node id="http://www.w3.org/2004/02/skos/core"/>
+<node id="http://xmlns.com/wot/0.1"/>
 <node id="http://ontology.eil.utoronto.ca/icity/Vehicle"/>
+<node id="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+<node id="http://data.europa.eu/949"/>
 <node id="http://www.w3.org/ns/prov"/>
-<node id="http://www.w3.org/2000/01/rdf-schema"/>
+<node id="http://schema.org"/>
+<node id="http://purl.org/dc/terms"/>
+<node id="http://purl.org/dc/dcmitype"/>
 <node id="https://w3id.org/transmodel/facilities"/>
 <node id="http://www.w3.org/ns/org"/>
-<node id="http://purl.org/dc/dcam"/>
-<node id="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
-<node id="https://w3id.org/transmodel/fares"/>
-<node id="http://schema.org"/>
-<node id="https://w3id.org/transmodel/journeys"/>
-<node id="https://w3id.org/catenax/ontology/core"/>
-<node id="https://json-schema.org/draft/2020-12/schema"/>
-<node id="http://data.europa.eu/949"/>
-<node id="https://w3id.org/transmodel/commons"/>
-<node id="http://purl.org/vocab/bio/0.1"/>
 <node id="http://creativecommons.org/ns"/>
 <node id="http://web.resource.org/cc"/>
-<node id="http://xmlns.com/wot/0.1"/>
-<edge source="https://www.datatourisme.fr/ontology/core" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://www.datatourisme.fr/ontology/core" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://www.datatourisme.fr/ontology/core" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://www.datatourisme.fr/ontology/core" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<node id="https://json-schema.org/draft/2020-12/schema"/>
+<node id="https://w3id.org/transmodel/fares"/>
+<node id="http://w3id.org/gaia-x/core"/>
+<node id="https://w3id.org/transmodel/commons"/>
+<node id="https://w3id.org/transmodel/journeys"/>
 <edge source="https://www.datatourisme.fr/ontology/core" target="https://www.datatourisme.fr/ontology/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2006/vcard/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://schema.org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://purl.org/dc/dcmitype" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/ns/prov" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/ns/dcat" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://xmlns.com/foaf/0.1" target="http://xmlns.com/wot/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="http://xmlns.com/foaf/0.1" target="http://www.w3.org/2003/06/sw-vocab-status/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="http://xmlns.com/foaf/0.1" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://xmlns.com/foaf/0.1" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://xmlns.com/foaf/0.1" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://xmlns.com/foaf/0.1" target="http://xmlns.com/wot/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://xmlns.com/foaf/0.1" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="http://xmlns.com/foaf/0.1" target="http://purl.org/dc/elements/1.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://purl.org/vocab/vann" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://purl.org/vocab/bio/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://web.resource.org/cc" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/vocab/vann" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://purl.org/dc/dcmitype" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://schema.org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2006/vcard/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/ns/dcat" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/ns/prov" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/dcat" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://purl.org/dc/dcam" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://purl.org/dc/elements/1.1" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/2004/02/skos/core" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/2004/02/skos/core" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/2004/02/skos/core" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/2004/02/skos/core" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/2004/02/skos/core" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2006/vcard/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/ns/odrl/2" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://creativecommons.org/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://schema.org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/odrl/2" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="https://w3id.org/catenax/ontology/vehicle" target="https://w3id.org/catenax/ontology/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/catenax/ontology/vehicle" target="https://w3id.org/catenax/ontology/vehicle" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/catenax/ontology/vehicle" target="https://json-schema.org/draft/2020-12/schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/vehicle" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/vehicle" target="https://w3id.org/catenax/ontology/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/vehicle" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/vehicle" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/vehicle" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/catenax/ontology/vehicle" target="http://purl.org/dc/elements/1.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://w3id.org/gaia-x/core" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://w3id.org/gaia-x/core" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://w3id.org/gaia-x/core" target="http://w3id.org/gaia-x/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://w3id.org/gaia-x/core" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://w3id.org/gaia-x/core" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://ontology.eil.utoronto.ca/icity/Vehicle" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/ns/prov" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/facilities" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/facilities" target="https://w3id.org/transmodel/facilities" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/facilities" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/facilities" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/facilities" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/ns/org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/fares" target="https://w3id.org/transmodel/fares" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/fares" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/fares" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/fares" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/fares" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/journeys" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/journeys" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/journeys" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/journeys" target="https://w3id.org/transmodel/journeys" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/journeys" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/core" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/core" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/catenax/ontology/core" target="http://purl.org/dc/elements/1.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/core" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/catenax/ontology/core" target="https://w3id.org/catenax/ontology/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/catenax/ontology/core" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://data.europa.eu/949" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://data.europa.eu/949" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://data.europa.eu/949" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2006/vcard/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://schema.org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://creativecommons.org/ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/odrl/2" target="http://www.w3.org/ns/odrl/2" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/dc/elements/1.1" target="http://purl.org/dc/dcam" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/dc/elements/1.1" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/dc/elements/1.1" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/vocab/vann" target="http://xmlns.com/foaf/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/vocab/vann" target="http://purl.org/vocab/bio/0.1" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/vocab/vann" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/vocab/vann" target="http://web.resource.org/cc" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://purl.org/vocab/vann" target="http://purl.org/vocab/vann" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/2004/02/skos/core" target="http://www.w3.org/2004/02/skos/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/2004/02/skos/core" target="http://purl.org/dc/terms" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://ontology.eil.utoronto.ca/icity/Vehicle" target="http://ontology.eil.utoronto.ca/icity/Vehicle" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="http://data.europa.eu/949" target="http://data.europa.eu/949" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="http://data.europa.eu/949" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/commons" target="http://www.w3.org/2001/XMLSchema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/commons" target="http://www.w3.org/1999/02/22-rdf-syntax-ns" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/commons" target="http://www.w3.org/2002/07/owl" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/prov" target="http://www.w3.org/ns/prov" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="https://w3id.org/transmodel/facilities" target="https://w3id.org/transmodel/facilities" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://www.w3.org/ns/org" target="http://www.w3.org/ns/org" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="https://w3id.org/transmodel/fares" target="https://w3id.org/transmodel/fares" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="http://w3id.org/gaia-x/core" target="http://w3id.org/gaia-x/core" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 <edge source="https://w3id.org/transmodel/commons" target="https://w3id.org/transmodel/commons" id="http://www.eona-x.eu/ontology/tracking/imports"/>
-<edge source="https://w3id.org/transmodel/commons" target="http://www.w3.org/2000/01/rdf-schema" id="http://www.eona-x.eu/ontology/tracking/imports"/>
+<edge source="https://w3id.org/transmodel/journeys" target="https://w3id.org/transmodel/journeys" id="http://www.eona-x.eu/ontology/tracking/imports"/>
 </graph></graphml>

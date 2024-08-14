@@ -11,4 +11,6 @@ from gui_functions import *
 
 set_page_config()
 
-st.image('docs/kg.png')
+st.title('Graph Visualizer')
+
+st.image('docs/kg.svg', width=1080)
