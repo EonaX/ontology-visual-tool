@@ -84,7 +84,7 @@ def extract_imports_ttl(url):
             
     return imports_list
 
-def extract_imports_rdf(url="http://xmlns.com/foaf/spec/index.rdf"):
+def extract_imports_rdf(url):
     """
     Extract all base URIS of ontologies used in a RDF/XML-serialized ontology.
 
@@ -120,6 +120,31 @@ def extract_imports_rdf(url="http://xmlns.com/foaf/spec/index.rdf"):
     
     except IndexError:
         imports_list=['IndexError']
+        
+def extract_imports(url, syntax):
+    """
+    Extracts prefixes from any kind of RDF serialization.
+
+    Parameters
+    ----------
+    url : TYPE
+        DESCRIPTION.
+    syntax : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    imports_list : TYPE
+        DESCRIPTION.
+
+    """
+    if syntax == 'Turtle':
+        imports_list = extract_imports_ttl(url)
+        return imports_list
+    
+    if syntax == 'RDF/XML':
+        imports_list = extract_imports_rdf(url)
+        return imports_list
         
 def check_forbidden_uris(uri):
     """

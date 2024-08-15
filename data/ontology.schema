@@ -49,6 +49,14 @@
         {
             "name": "added_when",
             "type": "string"
+        },
+        {
+            "name": "last_modified",
+            "type": "string"
+        },
+        {
+            "name": "imports",
+            "type": "string"
         }
     ],
     "primaryKey": [

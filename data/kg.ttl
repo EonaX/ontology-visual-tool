@@ -8,6 +8,13 @@
     eona:isProvidedBy "Open Gis" ;
     eona:isSerializedIn "Turtle" .
 
+<http://www.w3.org/ns/dcat> eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
+    eona:isNamed "Dcat" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
 <https://schema.org> eona:hasBaseUri "https://schema.org" ;
     eona:hasDomain "Cross-Domain" ;
     eona:hasDownloadUrl "https://schema.org/" ;
@@ -31,6 +38,49 @@
     eona:isProvidedBy "European Union Agency For Railways" ;
     eona:isSerializedIn "Turtle" .
 
+<http://gtfs.org> a eona:Ontology ;
+    eona:hasBaseUri "http://gtfs.org" ;
+    eona:hasDomain "Mobility" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/UTEL-UIUC/GTFS_Ontology/main/GTFS_base.ttl" ;
+    eona:imports <http://gtfs.org>,
+        <http://purl.org/dc/elements/1.1>,
+        <http://schema.org>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        xml: ;
+    eona:isNamed "Gtfs" ;
+    eona:isProvidedBy "Utel" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://ontology.eil.utoronto.ca/icity/TravelCost> a eona:Ontology ;
+    eona:hasBaseUri "http://ontology.eil.utoronto.ca/icity/TravelCost" ;
+    eona:hasDomain "Mobility" ;
+    eona:hasDownloadUrl "https://enterpriseintegrationlab.github.io/icity/TravelCost/doc/ontology.ttl" ;
+    eona:imports <http://ontology.eil.utoronto.ca/icity/TravelCost>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        xml: ;
+    eona:isNamed "Travel Cost" ;
+    eona:isProvidedBy "University Of Toronto" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://ontology.eil.utoronto.ca/icity/Trip> a eona:Ontology ;
+    eona:hasBaseUri "http://ontology.eil.utoronto.ca/icity/Trip" ;
+    eona:hasDomain "Tourism" ;
+    eona:hasDownloadUrl "https://enterpriseintegrationlab.github.io/icity/Trip/doc/ontology.ttl" ;
+    eona:imports <http://ontology.eil.utoronto.ca/icity/Trip>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        xml: ;
+    eona:isNamed "Trip" ;
+    eona:isProvidedBy "University Of Toronto" ;
+    eona:isSerializedIn "Turtle" .
+
 <http://ontology.eil.utoronto.ca/icity/Vehicle> a eona:Ontology ;
     eona:hasBaseUri "http://ontology.eil.utoronto.ca/icity/Vehicle" ;
     eona:hasDomain "Transport" ;
@@ -47,15 +97,30 @@
 
 <http://purl.org/dc/dcam> a eona:Ontology .
 
-<http://purl.org/dc/dcmitype> a eona:Ontology .
-
 <http://purl.org/eis/vocab/daq> a eona:Ontology .
+
+<http://purl.org/goodrelations/v1> a eona:Ontology .
 
 <http://purl.org/linked-data/cube> a eona:Ontology .
 
 <http://purl.org/vocab/bio/0.1> a eona:Ontology .
 
-<http://purl.org/vocommons/voaf> a eona:Ontology .
+<http://semweb.mmlab.be/ns/oh> a eona:Ontology ;
+    eona:hasBaseUri "http://semweb.mmlab.be/ns/oh" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/pietercolpaert/openinghoursontology/master/oh.ttl" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/vocab/vann>,
+        <http://purl.org/vocommons/voaf>,
+        <http://semweb.mmlab.be/ns/oh>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Opening Hours" ;
+    eona:isProvidedBy "Pieter Colpaert" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://w3id.org/gaia-x/core> a eona:Ontology ;
     eona:hasBaseUri "http://w3id.org/gaia-x/core" ;
@@ -75,25 +140,7 @@
 
 <http://www.w3.org/2003/06/sw-vocab-status/ns> a eona:Ontology .
 
-<http://www.w3.org/ns/dcat> a eona:Ontology ;
-    eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
-    eona:imports <http://purl.org/dc/dcmitype>,
-        <http://purl.org/dc/terms>,
-        <http://schema.org>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2001/XMLSchema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core>,
-        <http://www.w3.org/2006/vcard/ns>,
-        <http://www.w3.org/ns/dcat>,
-        <http://www.w3.org/ns/prov>,
-        <http://xmlns.com/foaf/0.1> ;
-    eona:isNamed "Dcat" ;
-    eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
+<http://www.w3.org/2006/time> a eona:Ontology .
 
 <http://www.w3.org/ns/dqv> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/ns/dqv" ;
@@ -144,12 +191,19 @@
     eona:hasBaseUri "http://www.w3.org/ns/org" ;
     eona:hasDomain "Mobility" ;
     eona:hasDownloadUrl "https://oeg-upm.github.io/snap-docs/tm-organisations.owl/documentation/ontology.ttl" ;
-    eona:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/goodrelations/v1>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2001/XMLSchema>,
         <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/2006/time>,
+        <http://www.w3.org/2006/vcard/ns>,
         xml:,
-        <http://www.w3.org/ns/org> ;
+        <http://www.w3.org/ns/org>,
+        <http://www.w3.org/ns/prov>,
+        <http://xmlns.com/foaf/0.1> ;
     eona:isNamed "Transmodel Organisations" ;
     eona:isProvidedBy "Snap" ;
     eona:isSerializedIn "Turtle" .
@@ -244,21 +298,7 @@
     eona:isProvidedBy "Adn-Tourisme" ;
     eona:isSerializedIn "Turtle" .
 
-<http://purl.org/vocab/vann> a eona:Ontology ;
-    eona:hasBaseUri "http://purl.org/vocab/vann" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://vocab.org/vann/vann-vocab-20100607.rdf" ;
-    eona:imports <http://purl.org/dc/terms>,
-        <http://purl.org/vocab/bio/0.1>,
-        <http://purl.org/vocab/vann>,
-        <http://web.resource.org/cc>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://xmlns.com/foaf/0.1> ;
-    eona:isNamed "Vann" ;
-    eona:isProvidedBy "Ian Davis" ;
-    eona:isSerializedIn "RDF/XML" .
+<http://purl.org/vocommons/voaf> a eona:Ontology .
 
 <http://schema.org> a eona:Ontology .
 
@@ -290,6 +330,22 @@
     eona:isNamed "Core" ;
     eona:isProvidedBy "Catena-X" ;
     eona:isSerializedIn "Turtle" .
+
+<http://purl.org/vocab/vann> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/vocab/vann" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://vocab.org/vann/vann-vocab-20100607.rdf" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/vocab/bio/0.1>,
+        <http://purl.org/vocab/vann>,
+        <http://web.resource.org/cc>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Vann" ;
+    eona:isProvidedBy "Ian Davis" ;
+    eona:isSerializedIn "RDF/XML" .
 
 <http://purl.org/dc/elements/1.1> a eona:Ontology ;
     eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;

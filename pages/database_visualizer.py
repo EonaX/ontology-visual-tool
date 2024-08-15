@@ -14,11 +14,12 @@ from graph_functions import *
 from kg_constructor import set_uris
 from rdflib import Graph, Namespace
 
+
 set_page_config()
 
 # variables
 
-df = pd.read_csv('data/database.csv', index_col=0)
+df = pd.read_pickle('data/df.pkl')
 
 # page layout
 
@@ -30,7 +31,7 @@ st.title('Ontology Database Manager')
 st.header('Ontology Database Viewer')
 
 st.dataframe(df, use_container_width=True, 
-             column_order=["provider", "name", "domain", "base_uri", "download_url", "syntax", "added_when"],
+             column_order=["provider", "name", "domain", "base_uri", "download_url", "syntax", "count_uri", "added_when"],
              column_config={
                  "_index":"ID",
                  "name":"Name",
@@ -39,6 +40,7 @@ st.dataframe(df, use_container_width=True,
                  "base_uri":"Base URI",
                  "download_url":"Download URL",
                  "syntax":"Serialization",
+                 "count_uri": "Imports Count",
                  "added_when":"Added On"
                  })
 

@@ -21,7 +21,7 @@ st.header('Ontology Submission Form')
 
     # load the database
 
-df = pd.read_csv('data/database.csv', index_col=0)
+df = pd.read_pickle('data/df.pkl')
 
 with open('data/ontology.schema', 'r') as f:
     json_schema = json.loads(f.read())
@@ -46,7 +46,7 @@ if submit:
     
     today = str(datetime.date.today())
     
-    list_of_properties = [name, provider, domain, base_uri, download_url, syntax, today]
+    list_of_properties = [name, provider, domain, base_uri, download_url, syntax, today, 'never', None, 0]
     
     error_message = add_ontology(df, list_of_properties)
     

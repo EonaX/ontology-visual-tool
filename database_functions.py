@@ -6,6 +6,8 @@ Created on Tue Aug 13 12:21:36 2024
 @author: maximeb
 """
 
+from graph_functions import remove_suffix
+
 def add_ontology(df, list_of_properties):
     """
     Add an ontology to the database.
@@ -23,7 +25,7 @@ def add_ontology(df, list_of_properties):
         DESCRIPTION.
 
     """
-    error_message = check_constraints(list_of_properties)
+    error_message = check_constraints(list_of_properties, df)
     
     if error_message:
         return error_message
@@ -31,7 +33,7 @@ def add_ontology(df, list_of_properties):
     apply_constraints(list_of_properties)
     
     df.loc[len(df)] = list_of_properties
-    df.to_csv('data/database.csv')
+    df.to_pickle('data/df.pkl')
 
 def remove_ontology(df, index_number):
     """
@@ -75,7 +77,7 @@ def apply_constraints(list_of_properties):
     list_of_properties[1] = list_of_properties[1].title()
     return list_of_properties
 
-def check_constraints(list_of_properties):
+def check_constraints(list_of_properties, df):
     """
     Checks if the constraints are respected.
 
@@ -91,15 +93,23 @@ def check_constraints(list_of_properties):
 
     """
     
-    if list_of_properties[0] == "" or list_of_properties[0] == None:
-        error_message = 'Name is empty.'
-        return error_message
+    for n in range(len(list_of_properties[:8])):
+        if list_of_properties[n] == "" or list_of_properties[n] == None:
+            error_message = 'All fields must be completed.'
+            return error_message
+    
     if list_of_properties[1] == "" or list_of_properties[1] == None:
         error_message = 'Provider is empty.'
         return error_message
+    
     if list_of_properties[3].startswith('http://') == False and list_of_properties[3].startswith('https://') == False:
         error_message = 'Base URI address not valid.'
         return error_message
+    
+    if remove_suffix(list_of_properties[3]) in df['base_uri'].values:
+        error_message = 'Already in the database.'
+        return error_message
+
     if list_of_properties[4].startswith('http://') == False and list_of_properties[4].startswith('https://') == False:
         error_message = 'Download URL address not valid.'
         return error_message
@@ -114,3 +124,11 @@ def get_set_of_ontologies(df):
                 set_uris.add(uri)
                 
     return set_uris
+
+def count_imports(list_of_imports):
+    try:
+        number_of_imports = len(set(list_of_imports))
+        return number_of_imports
+    except:
+        return None
+    
