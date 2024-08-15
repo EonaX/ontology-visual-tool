@@ -20,7 +20,9 @@ df_schema = pd.DataFrame(
      "base_uri":pd.Series(dtype='str'),
      "download_url":pd.Series(dtype='str'),
      "syntax":pd.Series(dtype='str'),
-     "added_when":pd.Series(dtype='str')
+     "added_when":pd.Series(dtype='str'),
+     "last_modified":pd.Series(dtype='str'),
+     "imports":pd.Series(dtype='object')
      }
     )
 
