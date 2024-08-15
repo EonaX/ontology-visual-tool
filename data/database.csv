@@ -21,3 +21,5 @@
 19,Schema.Org,Schema.Org,Cross-Domain,https://schema.org/,https://schema.org/,RDF/XML,2024-08-13
 20,Data Quality,W3C,Data,http://www.w3.org/ns/dqv#,https://raw.githubusercontent.com/w3c/dwbp/gh-pages/dqv.ttl,Turtle,2024-08-14
 21,Trip,University Of Toronto,Tourism,http://ontology.eil.utoronto.ca/icity/Trip/,https://enterpriseintegrationlab.github.io/icity/Trip/doc/ontology.ttl,Turtle,2024-08-14
+22,Organization,W3C,Cross-Domain,http://www.w3.org/ns/org#,https://www.w3.org/ns/org.ttl,Turtle,2024-08-15
+23,Opening Hours,Pieter Colpaert,Cross-Domain,http://semweb.mmlab.be/ns/oh#,https://raw.githubusercontent.com/pietercolpaert/openinghoursontology/master/oh.ttl,Turtle,2024-08-15
