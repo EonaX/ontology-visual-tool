@@ -15,31 +15,36 @@ set_page_config(layout="wide")
 
 st.title('Graph Visualizer')
 
-update_graph_button = st.button('Update Knowledge Graph')
-update_viz_button = st.button('Update Visualization')
-
-if update_graph_button:
     
-    import ontology_parser
-    import kg_constructor
+import ontology_parser
+import kg_constructor
 
-    g = Graph()
-    EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
-    g.bind("eona", EONA)
-    g.parse("data/kg.ttl", format="ttl")
-    
-    g = filter_graph(g, NAMESPACE=EONA, option='imports')
-    draw_graph(g)
+# Initializing
 
-if update_viz_button:
+g = Graph()
+EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
+g.bind("eona", EONA)
+g.parse("data/kg.ttl", format="ttl")
 
-    g = Graph()
-    EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
-    g.bind("eona", EONA)
-    g.parse("data/kg.ttl", format="ttl")
-    
-    g = filter_graph(g, NAMESPACE=EONA, option='imports')
-    draw_graph(g)
+# Cleaning
+
+forbidden_uris = st.checkbox('Remove forbidden URIs', value=True)
+if forbidden_uris:
+    g = remove_forbidden_uris(g)
+
+reflexive_triples = st.checkbox('Remove reflexive triples', value=True)
+if reflexive_triples:
+    g = remove_reflexive_triples(g)
+
+only_imports = st.checkbox('Show only imports triples', value=True)
+if only_imports:
+    subgraph = filter_graph(g, triple = (None, EONA['imports'], None))
+
+# subgraph += g.triples((None, EONA['isNamed'], None))
+
+# Drawing
+
+draw_graph(subgraph)
 
 st.image('data/kg.svg', width=1080)
 

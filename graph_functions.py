@@ -206,7 +206,7 @@ def construct_graph(path, format): # don't work
     
     return g
 
-def filter_graph(g, NAMESPACE, option):
+def filter_graph(g, triple=(None, None, None), hide_forbidden_uris=True, hide_reflexive_triples=True):
     """
     Apply graph data manipulations.
 
@@ -226,29 +226,25 @@ def filter_graph(g, NAMESPACE, option):
 
     """
     subgraph = Graph()
-    subgraph.bind("eona", NAMESPACE)
-    
         # keep only eona:imports relations
     
-    subgraph += g.triples((None, NAMESPACE[option], None))
-    
-        # keep also names
-    
-    # subgraph += g.triples((None, NAMESPACE.isNamed, None))
-    
-        # remove forbidden uris
-    
-    for n in forbidden_uris:
-        subgraph.remove((None, None, Literal(n)))
-        subgraph.remove((None, None, URIRef(n)))
-        
-        # remove reflexive triples
-        
-    for s, p, o in g:
-        if s == o:
-            subgraph.remove((s, p, o))
+    subgraph += g.triples(triple)
     
     return subgraph
+
+def remove_forbidden_uris(g):
+    for n in forbidden_uris:
+        g.remove((None, None, Literal(n)))
+        g.remove((None, None, URIRef(n)))
+        
+    return g
+    
+def remove_reflexive_triples(g):
+    for s, p, o in g:
+        if s == o:
+            g.remove((s, p, o))
+            
+    return g
 
 def save_graph(graph, destination):
     """
@@ -308,7 +304,7 @@ def draw_graph(rdflib_graph):
     
         # options
             
-    node_options = {"node_size": 2500, "edgecolors": "grey", "linewidths": 2.0, 'cmap':'viridis'}
+    node_options = {"node_size": 2500, "edgecolors": "grey", "linewidths": 2.0, "node_color":"#2c75ff55"}
     label_options = {"font_size":14, 'font_color':"white"}
     edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':15, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
     pos = nx.circular_layout(nx_graph)

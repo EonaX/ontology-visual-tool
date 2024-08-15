@@ -3,8 +3,8 @@
 
 <http://www.opengis.net/ont/geosparql> eona:hasBaseUri "http://www.opengis.net/ont/geosparql" ;
     eona:hasDomain "Cross-Domain" ;
-    eona:hasDownloadUrl "http://www.opengis.net/ont/geosparql" ;
-    eona:isNamed "Geosparql" ;
+    eona:hasDownloadUrl "https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.ttl" ;
+    eona:isNamed "Geo Sparql" ;
     eona:isProvidedBy "Open Gis" ;
     eona:isSerializedIn "Turtle" .
 

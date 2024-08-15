@@ -54,7 +54,7 @@ def remove_ontology(df, index_number):
     """
     df.drop(index=index_number, inplace=True)
     df.reset_index(drop=True, inplace=True)
-    df.to_csv('data/database.csv')
+    df.to_pickle('data/df.pkl')
     
     return df
 

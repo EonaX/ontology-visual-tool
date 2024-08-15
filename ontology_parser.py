@@ -12,7 +12,6 @@ from graph_functions import *
 from database_functions import *
 
 df = pd.read_pickle('data/df.pkl')
-url = df.iloc[0]['download_url']
 
     # extract imports from all urls
     

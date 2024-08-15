@@ -76,26 +76,6 @@ with col3:
 
 st.image('data/kg.svg')
 
-    # Update
-    
-update_graph_button = st.button('Update Knowledge Graph')
-    
-if update_graph_button:
-    with st.spinner('Parsing ontologies...'):
-        import ontology_parser
-    with st.spinner('Constructing the knowledge graph...'):
-        import kg_constructor
-    
-    with st.spinner('Generating Graph...'):
-        g = Graph()
-        EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
-        g.bind("eona", EONA)
-        g.parse("data/kg.ttl", format="ttl")
-        
-        g = filter_graph(g, NAMESPACE=EONA, option='imports')
-        save_graph(g, 'data/sub_kg.ttl')        
-        draw_graph(g)
-
     # ontology remover
 
 st.header('Remove an Ontology')
