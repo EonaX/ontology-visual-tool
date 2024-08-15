@@ -46,7 +46,7 @@ if submit:
     
     today = str(datetime.date.today())
     
-    list_of_properties = [name, provider, domain, base_uri, download_url, syntax, today, 'never', None]
+    list_of_properties = [name, provider, domain, base_uri, download_url, syntax, today, 'never', None, 0]
     
     error_message = add_ontology(df, list_of_properties)
     

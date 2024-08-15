@@ -1,5 +1,8 @@
 @prefix eona: <http://www.eona-x.eu/ontology/tracking#> .
 
+<http://gtfs.org> eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://schema.org> .
+
 <http://semweb.mmlab.be/ns/oh> eona:imports <http://purl.org/dc/terms>,
         <http://purl.org/vocab/vann>,
         <http://purl.org/vocommons/voaf>,

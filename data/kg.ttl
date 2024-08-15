@@ -38,6 +38,21 @@
     eona:isProvidedBy "European Union Agency For Railways" ;
     eona:isSerializedIn "Turtle" .
 
+<http://gtfs.org> a eona:Ontology ;
+    eona:hasBaseUri "http://gtfs.org" ;
+    eona:hasDomain "Mobility" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/UTEL-UIUC/GTFS_Ontology/main/GTFS_base.ttl" ;
+    eona:imports <http://gtfs.org>,
+        <http://purl.org/dc/elements/1.1>,
+        <http://schema.org>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        xml: ;
+    eona:isNamed "Gtfs" ;
+    eona:isProvidedBy "Utel" ;
+    eona:isSerializedIn "Turtle" .
+
 <http://ontology.eil.utoronto.ca/icity/TravelCost> a eona:Ontology ;
     eona:hasBaseUri "http://ontology.eil.utoronto.ca/icity/TravelCost" ;
     eona:hasDomain "Mobility" ;
@@ -89,8 +104,6 @@
 <http://purl.org/linked-data/cube> a eona:Ontology .
 
 <http://purl.org/vocab/bio/0.1> a eona:Ontology .
-
-<http://schema.org> a eona:Ontology .
 
 <http://semweb.mmlab.be/ns/oh> a eona:Ontology ;
     eona:hasBaseUri "http://semweb.mmlab.be/ns/oh" ;
@@ -287,6 +300,8 @@
 
 <http://purl.org/vocommons/voaf> a eona:Ontology .
 
+<http://schema.org> a eona:Ontology .
+
 <http://www.w3.org/2006/vcard/ns> a eona:Ontology .
 
 <http://www.w3.org/ns/prov> a eona:Ontology ;
@@ -316,20 +331,6 @@
     eona:isProvidedBy "Catena-X" ;
     eona:isSerializedIn "Turtle" .
 
-<http://purl.org/dc/elements/1.1> a eona:Ontology ;
-    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
-    eona:imports <http://purl.org/dc/dcam>,
-        <http://purl.org/dc/terms>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core> ;
-    eona:isNamed "Metadata Terms" ;
-    eona:isProvidedBy "Dublin Core" ;
-    eona:isSerializedIn "Turtle" .
-
 <http://purl.org/vocab/vann> a eona:Ontology ;
     eona:hasBaseUri "http://purl.org/vocab/vann" ;
     eona:hasDomain "Data" ;
@@ -345,6 +346,20 @@
     eona:isNamed "Vann" ;
     eona:isProvidedBy "Ian Davis" ;
     eona:isSerializedIn "RDF/XML" .
+
+<http://purl.org/dc/elements/1.1> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
+    eona:imports <http://purl.org/dc/dcam>,
+        <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    eona:isNamed "Metadata Terms" ;
+    eona:isProvidedBy "Dublin Core" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://www.w3.org/2004/02/skos/core> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/2004/02/skos/core" ;
