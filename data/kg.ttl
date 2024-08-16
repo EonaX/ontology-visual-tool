@@ -1,26 +1,12 @@
 @prefix eona: <http://www.eona-x.eu/ontology/tracking#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
-<http://www.opengis.net/ont/geosparql> eona:hasBaseUri "http://www.opengis.net/ont/geosparql" ;
-    eona:hasDomain "Cross-Domain" ;
-    eona:hasDownloadUrl "https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.ttl" ;
-    eona:isNamed "Geo Sparql" ;
-    eona:isProvidedBy "Open Gis" ;
-    eona:isSerializedIn "Turtle" .
-
 <http://www.w3.org/ns/dcat> eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
     eona:hasDomain "Data" ;
     eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
     eona:isNamed "Dcat" ;
     eona:isProvidedBy "W3C" ;
     eona:isSerializedIn "Turtle" .
-
-<https://schema.org> eona:hasBaseUri "https://schema.org" ;
-    eona:hasDomain "Cross-Domain" ;
-    eona:hasDownloadUrl "https://schema.org/" ;
-    eona:isNamed "Schema.Org" ;
-    eona:isProvidedBy "Schema.Org" ;
-    eona:isSerializedIn "RDF/XML" .
 
 <http://creativecommons.org/ns> a eona:Ontology .
 
@@ -138,6 +124,29 @@
 
 <http://web.resource.org/cc> a eona:Ontology .
 
+<http://www.opengis.net/ont/geosparql> a eona:Ontology ;
+    eona:hasBaseUri "http://www.opengis.net/ont/geosparql" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.ttl" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/vocab/vann>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/geosparql/1.0>,
+        <http://www.opengis.net/spec/geosparql/1.1/specification.html>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <https://schema.org> ;
+    eona:isNamed "Geo Sparql" ;
+    eona:isProvidedBy "Open Gis" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://www.opengis.net/ont/geosparql/1.0> a eona:Ontology .
+
+<http://www.opengis.net/spec/geosparql/1.1/specification.html> a eona:Ontology .
+
 <http://www.w3.org/2003/06/sw-vocab-status/ns> a eona:Ontology .
 
 <http://www.w3.org/2006/time> a eona:Ontology .
@@ -211,6 +220,14 @@
 <http://xmlns.com/wot/0.1> a eona:Ontology .
 
 <https://json-schema.org/draft/2020-12/schema> a eona:Ontology .
+
+<https://schema.org> a eona:Ontology ;
+    eona:hasBaseUri "https://schema.org" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://schema.org/" ;
+    eona:isNamed "Schema.Org" ;
+    eona:isProvidedBy "Schema.Org" ;
+    eona:isSerializedIn "RDF/XML" .
 
 <https://w3id.org/catenax/ontology/vehicle> a eona:Ontology ;
     eona:hasBaseUri "https://w3id.org/catenax/ontology/vehicle" ;
@@ -331,6 +348,20 @@
     eona:isProvidedBy "Catena-X" ;
     eona:isSerializedIn "Turtle" .
 
+<http://purl.org/dc/elements/1.1> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
+    eona:imports <http://purl.org/dc/dcam>,
+        <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    eona:isNamed "Metadata Terms" ;
+    eona:isProvidedBy "Dublin Core" ;
+    eona:isSerializedIn "Turtle" .
+
 <http://purl.org/vocab/vann> a eona:Ontology ;
     eona:hasBaseUri "http://purl.org/vocab/vann" ;
     eona:hasDomain "Data" ;
@@ -346,20 +377,6 @@
     eona:isNamed "Vann" ;
     eona:isProvidedBy "Ian Davis" ;
     eona:isSerializedIn "RDF/XML" .
-
-<http://purl.org/dc/elements/1.1> a eona:Ontology ;
-    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
-    eona:imports <http://purl.org/dc/dcam>,
-        <http://purl.org/dc/terms>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core> ;
-    eona:isNamed "Metadata Terms" ;
-    eona:isProvidedBy "Dublin Core" ;
-    eona:isSerializedIn "Turtle" .
 
 <http://www.w3.org/2004/02/skos/core> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/2004/02/skos/core" ;

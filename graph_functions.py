@@ -12,6 +12,7 @@ from rdflib import Namespace, Graph, Literal, URIRef
 import networkx as nx
 import matplotlib.pyplot as plt
 import math
+import re
 
 forbidden_uris = ['http://www.w3.org/2002/07/owl', 
                   'http://www.w3.org/1999/02/22-rdf-syntax-ns', 
@@ -37,6 +38,7 @@ def download_ontology(url):
         DESCRIPTION.
 
     """
+    
     r = requests.get(url)
 
     ontology = r.text
@@ -58,12 +60,15 @@ def extract_imports_ttl(url):
         DESCRIPTION.
 
     """
+    
     ontology = download_ontology(url)
 
-    ontology = ontology.split('prefix')[1:]
+    ontology = re.split("prefix", ontology, flags=re.IGNORECASE)
+        
+    ontology = ontology[1:]
 
     imports_list = []
-
+    
     for n in ontology:
         try:
             
@@ -286,7 +291,7 @@ def convert_to_nx(rdflib_graph):
     
     return nx_graph
 
-def draw_graph(nx_graph, layout = 'circular'):
+def draw_graph(nx_graph, layout = 'spring'):
     """
     Froma rdflib graph, it displays a Matplotlib graph visualization.
 
@@ -303,7 +308,7 @@ def draw_graph(nx_graph, layout = 'circular'):
     
         # options
             
-    node_options = {"node_size": 2500, "edgecolors": "grey", "linewidths": 2.0, "node_color":"#2c75ff55"}
+    node_options = {"node_size": 2500, "edgecolors": "#ffffff92", "linewidths": 2.0, "node_color":"#444444bb"}
     label_options = {"font_size":14, 'font_color':"white"}
     edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':30, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
     
@@ -317,7 +322,7 @@ def draw_graph(nx_graph, layout = 'circular'):
     # pos = nx.nx_agraph.graphviz_layout(nx_graph, prog="neato")
         # plt
     
-    plt.figure(figsize=(19.2,19.2))
+    plt.figure(figsize=(19.2,10.8))
     plt.axes(frameon=False)
     nx.draw_networkx_nodes(nx_graph, pos, **node_options)
     nx.draw_networkx_labels(nx_graph, pos, **label_options)
@@ -326,3 +331,5 @@ def draw_graph(nx_graph, layout = 'circular'):
         # export to svg
     plt.tight_layout()
     plt.savefig('data/kg.svg', format='svg', transparent=True)
+    
+    return nx_graph

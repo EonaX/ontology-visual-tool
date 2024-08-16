@@ -30,3 +30,4 @@ df['base_uri'] = df['base_uri'].apply(lambda x: remove_suffix(x))
     # export
 
 df.to_pickle('data/df.pkl')
+
