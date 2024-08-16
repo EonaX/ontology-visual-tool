@@ -38,13 +38,15 @@ if reflexive_triples:
 
 only_imports = st.checkbox('Show only imports triples', value=True)
 if only_imports:
-    subgraph = filter_graph(g, triple = (None, EONA['imports'], None))
+    g = filter_graph(g, triple = (None, EONA['imports'], None))
 
+layout_radio = st.radio('Layout', ['spring', 'circular'])
+layout = layout_radio
 # subgraph += g.triples((None, EONA['isNamed'], None))
 
 # Drawing
-
-draw_graph(subgraph)
+subgraph = convert_to_nx(g)
+draw_graph(subgraph, layout)
 
 st.image('data/kg.svg', width=1080)
 

@@ -11,6 +11,7 @@ from rdflib.extras.external_graph_libs import *
 from rdflib import Namespace, Graph, Literal, URIRef
 import networkx as nx
 import matplotlib.pyplot as plt
+import math
 
 forbidden_uris = ['http://www.w3.org/2002/07/owl', 
                   'http://www.w3.org/1999/02/22-rdf-syntax-ns', 
@@ -285,7 +286,7 @@ def convert_to_nx(rdflib_graph):
     
     return nx_graph
 
-def draw_graph(rdflib_graph):
+def draw_graph(nx_graph, layout = 'circular'):
     """
     Froma rdflib graph, it displays a Matplotlib graph visualization.
 
@@ -299,19 +300,24 @@ def draw_graph(rdflib_graph):
     None.
 
     """
-    nx_graph = convert_to_nx(rdflib_graph)
-    # drawing
     
         # options
             
     node_options = {"node_size": 2500, "edgecolors": "grey", "linewidths": 2.0, "node_color":"#2c75ff55"}
     label_options = {"font_size":14, 'font_color':"white"}
-    edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':15, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
-    pos = nx.circular_layout(nx_graph)
+    edge_options = {"width":1.5, 'edge_color':"grey", 'arrowsize':30, 'connectionstyle':'arc3,rad=0.2', "node_size": 2500}
+    
+            # layout
+    if layout == 'spring':
+        pos = nx.spring_layout(nx_graph, k=4/math.sqrt(nx_graph.order()))
+    
+    if layout == 'circular':
+        pos = nx.circular_layout(nx_graph)
+
     # pos = nx.nx_agraph.graphviz_layout(nx_graph, prog="neato")
         # plt
     
-    plt.figure(figsize=(19.2,10.8*1.3))
+    plt.figure(figsize=(19.2,19.2))
     plt.axes(frameon=False)
     nx.draw_networkx_nodes(nx_graph, pos, **node_options)
     nx.draw_networkx_labels(nx_graph, pos, **label_options)
