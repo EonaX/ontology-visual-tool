@@ -1,13 +1,6 @@
 @prefix eona: <http://www.eona-x.eu/ontology/tracking#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
-<http://www.w3.org/ns/dcat> eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
-    eona:isNamed "Dcat" ;
-    eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
-
 <http://creativecommons.org/ns> a eona:Ontology .
 
 <http://data.europa.eu/949> a eona:Ontology ;
@@ -83,6 +76,8 @@
 
 <http://purl.org/dc/dcam> a eona:Ontology .
 
+<http://purl.org/dc/dcmitype> a eona:Ontology .
+
 <http://purl.org/eis/vocab/daq> a eona:Ontology .
 
 <http://purl.org/goodrelations/v1> a eona:Ontology .
@@ -150,6 +145,26 @@
 <http://www.w3.org/2003/06/sw-vocab-status/ns> a eona:Ontology .
 
 <http://www.w3.org/2006/time> a eona:Ontology .
+
+<http://www.w3.org/ns/dcat> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
+    eona:imports <http://purl.org/dc/dcmitype>,
+        <http://purl.org/dc/terms>,
+        <http://schema.org>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/2006/vcard/ns>,
+        <http://www.w3.org/ns/dcat>,
+        <http://www.w3.org/ns/prov>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Dcat" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://www.w3.org/ns/dqv> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/ns/dqv" ;
@@ -317,6 +332,20 @@
 
 <http://purl.org/vocommons/voaf> a eona:Ontology .
 
+<https://w3id.org/catenax/ontology/core> a eona:Ontology ;
+    eona:hasBaseUri "https://w3id.org/catenax/ontology/core" ;
+    eona:hasDomain "Transport" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/big-data-spaces/ontology/v24.05/ontology/core_ontology.ttl" ;
+    eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <https://w3id.org/catenax/ontology/core> ;
+    eona:isNamed "Core" ;
+    eona:isProvidedBy "Catena-X" ;
+    eona:isSerializedIn "Turtle" .
+
 <http://schema.org> a eona:Ontology .
 
 <http://www.w3.org/2006/vcard/ns> a eona:Ontology .
@@ -332,20 +361,6 @@
         <http://www.w3.org/ns/prov> ;
     eona:isNamed "Prov-O" ;
     eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
-
-<https://w3id.org/catenax/ontology/core> a eona:Ontology ;
-    eona:hasBaseUri "https://w3id.org/catenax/ontology/core" ;
-    eona:hasDomain "Transport" ;
-    eona:hasDownloadUrl "https://raw.githubusercontent.com/big-data-spaces/ontology/v24.05/ontology/core_ontology.ttl" ;
-    eona:imports <http://purl.org/dc/elements/1.1>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2001/XMLSchema>,
-        <http://www.w3.org/2002/07/owl>,
-        <https://w3id.org/catenax/ontology/core> ;
-    eona:isNamed "Core" ;
-    eona:isProvidedBy "Catena-X" ;
     eona:isSerializedIn "Turtle" .
 
 <http://purl.org/dc/elements/1.1> a eona:Ontology ;

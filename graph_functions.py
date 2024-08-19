@@ -146,9 +146,11 @@ def extract_imports(url, syntax):
     """
     if syntax == 'Turtle':
         imports_list = extract_imports_ttl(url)
+        print('ttl imports...')
         return imports_list
     
     if syntax == 'RDF/XML':
+        print('rdf/xml imports...')
         imports_list = extract_imports_rdf(url)
         return imports_list
         
