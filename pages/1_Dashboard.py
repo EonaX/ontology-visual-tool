@@ -79,7 +79,7 @@ with col3:
 
     # Display
 
-st.image('data/kg.svg')
+st.image('data/kg.png')
 
     # ontology remover
 

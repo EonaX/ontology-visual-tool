@@ -332,6 +332,6 @@ def draw_graph(nx_graph, layout = 'spring'):
     
         # export to svg
     plt.tight_layout()
-    plt.savefig('data/kg.svg', format='svg', transparent=True)
+    plt.savefig('data/kg.png', format='png', transparent=True)
     
     return nx_graph

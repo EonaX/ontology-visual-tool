@@ -90,7 +90,7 @@ try:
 except:
     pass
 
-st.image('data/kg.svg', width=1080)
+st.image('data/kg.png', width=1080)
 
 
 #%%

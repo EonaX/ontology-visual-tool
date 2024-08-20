@@ -2,4 +2,4 @@
 
 source /home/maxime/virtual_environments/ontology-visual-tool/bin/activate
 
-streamlit run gui.py
+streamlit run Ontology_Registration.py

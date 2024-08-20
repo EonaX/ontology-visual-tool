@@ -41,5 +41,9 @@ Concerning the relational database, it consists in one table **Ontology** with t
 #### Ontology Database Manager
 ![Database Manager Page](docs/20240808_data_quality_scoring_tool_db_manager_screenshot.png)
 
-## Graph visualizer
+## Graph Visualizer
+### Static Graph Visualization 
 ![Graph Visualizer](docs/kg.png)
+
+### Interactive Graph Visualization
+![Interactive Graph Visualization](docs/interactive_graph.png)

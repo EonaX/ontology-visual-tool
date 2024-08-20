@@ -33,6 +33,11 @@ query = st.text_area(label='SPARQL Query', value = default_query, height = 160)
 
 launch_query = st.button('Visualize Graph', key='launch_query')
 
+HtmlFile = open('data/mygraph.html', 'r')
+raw_html = HtmlFile.read().encode("utf-8")
+raw_html = base64.b64encode(raw_html).decode()
+components.iframe(f"data:text/html;base64,{raw_html}", height=710)
+
 if launch_query:
     
     g = g.query(query, initNs = {'eona':EONA, 'rdf':RDF})
@@ -40,11 +45,6 @@ if launch_query:
     subgraph = convert_to_nx(g)
     nx_graph = draw_graph(subgraph) 
 
-    net = Network('700px', '1720px')
+    net = Network('700px', '1720px', directed=True)
     net.from_nx(subgraph)
     net.save_graph('data/mygraph.html')
-
-    HtmlFile = open('data/mygraph.html', 'r')
-    raw_html = HtmlFile.read().encode("utf-8")
-    raw_html = base64.b64encode(raw_html).decode()
-    components.iframe(f"data:text/html;base64,{raw_html}", height=710)
