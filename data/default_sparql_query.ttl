@@ -12,8 +12,19 @@ eona:imports ?import.
 FILTER(!(?s = ?import))
 FILTER(!(?s = ?importProvname))
 
-BIND(IF(EXISTS {?import eona:isNamed ?importName ; eona:isProvidedBy ?importProvider}, CONCAT(?importProvider, '\n', ?importName), ?import) AS ?importProvname)
+FILTER( ! (?import = <http://www.w3.org/2002/07/owl>) )
+FILTER( ! (?import =<http://www.w3.org/2001/XMLSchema>) )
+FILTER( ! (?import =<http://www.w3.org/XML/1998/namespace>) )
+FILTER( ! (?import =<http://www.w3.org/2000/01/rdf-schema>) )
+FILTER( ! (?import =<http://www.w3.org/1999/02/22-rdf-syntax-ns>) )
 
+OPTIONAL
+{
+?import eona:isNamed ?importName ; eona:isProvidedBy ?importProvider.
+}
 
+BIND(IF(BOUND(?importName), CONCAT(?importProvider, '\n', ?importName), ?import) AS ?importProvname)
 BIND(CONCAT(?provider, '\n', ?name) AS ?provname)
+
+
 }
