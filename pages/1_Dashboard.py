@@ -33,7 +33,9 @@ st.header('Ontology Database Viewer')
 update = st.button('Update')
 
 if update:
+    df = None
     import ontology_parser
+    df = pd.read_pickle('data/df.pkl')
 
 st.dataframe(df, use_container_width=True, 
              column_order=["provider", "name", "domain", "base_uri", "download_url", "syntax", "count_uri", "added_when"],

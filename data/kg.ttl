@@ -1,6 +1,13 @@
 @prefix eona: <http://www.eona-x.eu/ontology/tracking#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
+<http://purl.org/linked-data/cube#> eona:hasBaseUri "http://purl.org/linked-data/cube#" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/UKGovLD/publishing-statistical-data/master/specs/src/main/vocab/cube.ttl" ;
+    eona:isNamed "Data Cube" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
 <http://data.europa.eu/949> a eona:Ontology ;
     eona:hasBaseUri "http://data.europa.eu/949" ;
     eona:hasDomain "Transport" ;
@@ -76,19 +83,40 @@
     eona:isProvidedBy "University Of Toronto" ;
     eona:isSerializedIn "Turtle" .
 
-<http://pcdm.org/models> a eona:Ontology .
+<http://purl.org/eis/vocab/dqm> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/eis/vocab/dqm" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/diachron/quality/master/quality-vocabulary/src/main/resources/vocabularies/dqm/dqm.ttl" ;
+    eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://purl.org/dc/terms>,
+        <http://purl.org/eis/vocab/daq>,
+        <http://purl.org/eis/vocab/dqm>,
+        <http://purl.org/eis/vocab/qpro>,
+        <http://purl.org/vocab/vann>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/03/trix/rdfg-1>,
+        <http://www.w3.org/ns/prov>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Linked Data Quality Metrics" ;
+    eona:isProvidedBy "Jeremy Debattista" ;
+    eona:isSerializedIn "Turtle" .
 
-<http://purl.org/dc/dcam> a eona:Ontology .
-
-<http://purl.org/eis/vocab/daq> a eona:Ontology .
+<http://purl.org/eis/vocab/qpro> a eona:Ontology .
 
 <http://purl.org/linked-data/cube> a eona:Ontology .
 
 <http://purl.org/ontology/bibo> a eona:Ontology .
 
+<http://purl.org/pav> a eona:Ontology .
+
+<http://purl.org/spar/biro> a eona:Ontology .
+
 <http://purl.org/vocab/bio/0.1> a eona:Ontology .
 
-<http://purl.org/vocab/frbr/core> a eona:Ontology .
+<http://rdf-vocabulary.ddialliance.org/discovery> a eona:Ontology .
 
 <http://rdfs.org/sioc/ns> a eona:Ontology .
 
@@ -129,11 +157,7 @@
     eona:isProvidedBy "Gaia-X" ;
     eona:isSerializedIn "Turtle" .
 
-<http://web.resource.org/cc> a eona:Ontology .
-
 <http://www.iana.org/assignments/relation> a eona:Ontology .
-
-<http://www.openarchives.org/ore/terms> a eona:Ontology .
 
 <http://www.opengis.net/ont/geosparql> a eona:Ontology ;
     eona:hasBaseUri "http://www.opengis.net/ont/geosparql" ;
@@ -158,65 +182,26 @@
 
 <http://www.opengis.net/spec/geosparql/1.1/specification.html> a eona:Ontology .
 
-<http://www.w3.org/2003/01/geo/wgs84_pos> a eona:Ontology .
+<http://www.w3.org/2003/01/geo/wgs84_pos> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/2003/01/geo/wgs84_pos" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "http://www.w3.org/2003/01/geo/wgs84_pos" ;
+    eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema> ;
+    eona:isNamed "Wgs84 Geo Positioning" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "RDF/XML" .
 
 <http://www.w3.org/2003/12/exif/ns> a eona:Ontology .
-
-<http://www.w3.org/2004/03/trix/rdfg-1> a eona:Ontology .
 
 <http://www.w3.org/2011/content> a eona:Ontology .
 
 <http://www.w3.org/TR/annotation-vocab> a eona:Ontology .
 
-<http://www.w3.org/ns/activitystreams> a eona:Ontology .
+<http://www.w3.org/TR/vocab-duv> a eona:Ontology .
 
 <http://www.w3.org/ns/auth/acl> a eona:Ontology .
-
-<http://www.w3.org/ns/dcat> a eona:Ontology ;
-    eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
-    eona:imports <http://purl.org/dc/dcmitype>,
-        <http://purl.org/dc/terms>,
-        <http://schema.org>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2001/XMLSchema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core>,
-        <http://www.w3.org/2006/vcard/ns>,
-        <http://www.w3.org/ns/dcat>,
-        <http://www.w3.org/ns/prov>,
-        <http://xmlns.com/foaf/0.1> ;
-    eona:isNamed "Dcat" ;
-    eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
-
-<http://www.w3.org/ns/dqv> a eona:Ontology ;
-    eona:hasBaseUri "http://www.w3.org/ns/dqv" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://raw.githubusercontent.com/w3c/dwbp/gh-pages/dqv.ttl" ;
-    eona:imports <http://purl.org/dc/terms>,
-        <http://purl.org/eis/vocab/daq>,
-        <http://purl.org/linked-data/cube>,
-        <http://purl.org/vocab/vann>,
-        <http://purl.org/vocommons/voaf>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2001/XMLSchema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core>,
-        <http://www.w3.org/ns/dqv>,
-        <http://www.w3.org/ns/duv>,
-        <http://www.w3.org/ns/oa>,
-        <http://xmlns.com/foaf/0.1> ;
-    eona:isNamed "Data Quality" ;
-    eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
-
-<http://www.w3.org/ns/duv> a eona:Ontology .
-
-<http://www.w3.org/ns/ldp> a eona:Ontology .
 
 <http://www.w3.org/ns/odrl/2> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/ns/odrl/2" ;
@@ -360,7 +345,37 @@
 
 <http://creativecommons.org/ns> a eona:Ontology .
 
-<http://purl.org/dc/dcmitype> a eona:Ontology .
+<http://pcdm.org/models> a eona:Ontology ;
+    eona:hasBaseUri "http://pcdm.org/models" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://pcdm.org/2016/04/18/models" ;
+    eona:imports <http://pcdm.org/models>,
+        <http://purl.org/dc/terms>,
+        <http://www.openarchives.org/ore/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/ns/ldp> ;
+    eona:isNamed "Portland Common Data Model" ;
+    eona:isProvidedBy "Duraspace" ;
+    eona:isSerializedIn "RDF/XML" .
+
+<http://purl.org/dc/dcmitype> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/dc/dcmitype" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl" ;
+    eona:imports <http://purl.org/dc/dcam>,
+        <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    eona:isNamed "Dcmi Type" ;
+    eona:isProvidedBy "Dublin Core" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://purl.org/eis/vocab/daq> a eona:Ontology .
 
 <http://purl.org/goodrelations/v1> a eona:Ontology ;
     eona:hasBaseUri "http://purl.org/goodrelations/v1" ;
@@ -370,9 +385,154 @@
     eona:isProvidedBy "Martin Hepp" ;
     eona:isSerializedIn "RDF/XML" .
 
+<http://purl.org/vocab/frbr/core> a eona:Ontology .
+
+<http://web.resource.org/cc> a eona:Ontology ;
+    eona:hasBaseUri "http://web.resource.org/cc" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://web.resource.org/cc/schema.rdf" ;
+    eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://web.resource.org/cc>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema> ;
+    eona:isNamed "Creative Commons" ;
+    eona:isProvidedBy "Web Resource" ;
+    eona:isSerializedIn "RDF/XML" .
+
+<http://www.openarchives.org/ore/terms> a eona:Ontology .
+
 <http://www.w3.org/2003/06/sw-vocab-status/ns> a eona:Ontology .
 
-<http://www.w3.org/2006/time> a eona:Ontology .
+<http://www.w3.org/2004/03/trix/rdfg-1> a eona:Ontology .
+
+<http://www.w3.org/ns/activitystreams> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/ns/activitystreams" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/w3c/activitystreams/main/vocabulary/activitystreams2.owl" ;
+    eona:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        xml:,
+        <http://www.w3.org/ns/activitystreams> ;
+    eona:isNamed "Activity Streams" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://www.w3.org/ns/dcat> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/ns/dcat" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/ns/dcat2.ttl" ;
+    eona:imports <http://purl.org/dc/dcmitype>,
+        <http://purl.org/dc/terms>,
+        <http://schema.org>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/2006/vcard/ns>,
+        <http://www.w3.org/ns/dcat>,
+        <http://www.w3.org/ns/prov>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Dcat" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://www.w3.org/ns/dqv> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/ns/dqv" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/w3c/dwbp/gh-pages/dqv.ttl" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/eis/vocab/daq>,
+        <http://purl.org/linked-data/cube>,
+        <http://purl.org/vocab/vann>,
+        <http://purl.org/vocommons/voaf>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/ns/dqv>,
+        <http://www.w3.org/ns/duv>,
+        <http://www.w3.org/ns/oa>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Data Quality" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://www.w3.org/ns/duv> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/ns/duv" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/ns/duv" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://purl.org/pav>,
+        <http://purl.org/spar/biro>,
+        <http://purl.org/vocab/frbr/core>,
+        <http://purl.org/vocab/vann>,
+        <http://purl.org/vocommons/voaf>,
+        <http://rdf-vocabulary.ddialliance.org/discovery>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/TR/vocab-duv>,
+        <http://www.w3.org/ns/dcat>,
+        <http://www.w3.org/ns/dqv>,
+        <http://www.w3.org/ns/duv>,
+        <http://www.w3.org/ns/oa>,
+        <http://xmlns.com/foaf/0.1> ;
+    eona:isNamed "Dataset Usage" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://www.w3.org/ns/ldp> a eona:Ontology .
+
+<https://w3id.org/catenax/ontology/core> a eona:Ontology ;
+    eona:hasBaseUri "https://w3id.org/catenax/ontology/core" ;
+    eona:hasDomain "Transport" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/big-data-spaces/ontology/v24.05/ontology/core_ontology.ttl" ;
+    eona:imports <http://purl.org/dc/elements/1.1>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <https://w3id.org/catenax/ontology/core> ;
+    eona:isNamed "Core" ;
+    eona:isProvidedBy "Catena-X" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://purl.org/dc/dcam> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/dc/dcam" ;
+    eona:hasDomain "Tourism" ;
+    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_abstract_model.ttl" ;
+    eona:imports <http://purl.org/dc/dcam>,
+        <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    eona:isNamed "Abstract Model" ;
+    eona:isProvidedBy "Dublin Core" ;
+    eona:isSerializedIn "Turtle" .
+
+<http://schema.org> a eona:Ontology .
+
+<http://www.w3.org/2006/time> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/2006/time" ;
+    eona:hasDomain "Cross-Domain" ;
+    eona:hasDownloadUrl "https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/2006/time> ;
+    eona:isNamed "Time" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://www.w3.org/ns/oa> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/ns/oa" ;
@@ -413,20 +573,6 @@
     eona:isProvidedBy "W3C" ;
     eona:isSerializedIn "Turtle" .
 
-<https://w3id.org/catenax/ontology/core> a eona:Ontology ;
-    eona:hasBaseUri "https://w3id.org/catenax/ontology/core" ;
-    eona:hasDomain "Transport" ;
-    eona:hasDownloadUrl "https://raw.githubusercontent.com/big-data-spaces/ontology/v24.05/ontology/core_ontology.ttl" ;
-    eona:imports <http://purl.org/dc/elements/1.1>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2001/XMLSchema>,
-        <http://www.w3.org/2002/07/owl>,
-        <https://w3id.org/catenax/ontology/core> ;
-    eona:isNamed "Core" ;
-    eona:isProvidedBy "Catena-X" ;
-    eona:isSerializedIn "Turtle" .
-
 <http://purl.org/vocommons/voaf> a eona:Ontology ;
     eona:hasBaseUri "http://purl.org/vocommons/voaf" ;
     eona:hasDomain "Data" ;
@@ -447,9 +593,19 @@
     eona:isProvidedBy "Bernard Vatant" ;
     eona:isSerializedIn "RDF/XML" .
 
-<http://schema.org> a eona:Ontology .
-
-<http://www.w3.org/2006/vcard/ns> a eona:Ontology .
+<http://www.w3.org/2006/vcard/ns> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/2006/vcard/ns" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/2006/vcard/ns#VCard" ;
+    eona:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2001/XMLSchema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2006/vcard/ns>,
+        xml: ;
+    eona:isNamed "Vcard" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://www.w3.org/ns/prov> a eona:Ontology ;
     eona:hasBaseUri "http://www.w3.org/ns/prov" ;
@@ -462,20 +618,6 @@
         <http://www.w3.org/ns/prov> ;
     eona:isNamed "Prov-O" ;
     eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "Turtle" .
-
-<http://purl.org/dc/elements/1.1> a eona:Ontology ;
-    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
-    eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
-    eona:imports <http://purl.org/dc/dcam>,
-        <http://purl.org/dc/terms>,
-        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
-        <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2002/07/owl>,
-        <http://www.w3.org/2004/02/skos/core> ;
-    eona:isNamed "Metadata Terms" ;
-    eona:isProvidedBy "Dublin Core" ;
     eona:isSerializedIn "Turtle" .
 
 <http://purl.org/vocab/vann> a eona:Ontology ;
@@ -494,18 +636,19 @@
     eona:isProvidedBy "Ian Davis" ;
     eona:isSerializedIn "RDF/XML" .
 
-<http://www.w3.org/2004/02/skos/core> a eona:Ontology ;
-    eona:hasBaseUri "http://www.w3.org/2004/02/skos/core" ;
+<http://purl.org/dc/elements/1.1> a eona:Ontology ;
+    eona:hasBaseUri "http://purl.org/dc/elements/1.1" ;
     eona:hasDomain "Data" ;
-    eona:hasDownloadUrl "https://www.w3.org/TR/skos-reference/skos.rdf" ;
-    eona:imports <http://purl.org/dc/terms>,
+    eona:hasDownloadUrl "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl" ;
+    eona:imports <http://purl.org/dc/dcam>,
+        <http://purl.org/dc/terms>,
         <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2002/07/owl>,
         <http://www.w3.org/2004/02/skos/core> ;
-    eona:isNamed "Skos" ;
-    eona:isProvidedBy "W3C" ;
-    eona:isSerializedIn "RDF/XML" .
+    eona:isNamed "Metadata Terms" ;
+    eona:isProvidedBy "Dublin Core" ;
+    eona:isSerializedIn "Turtle" .
 
 <http://xmlns.com/foaf/0.1> a eona:Ontology ;
     eona:hasBaseUri "http://xmlns.com/foaf/0.1" ;
@@ -522,15 +665,28 @@
     eona:isProvidedBy "Xmlns" ;
     eona:isSerializedIn "RDF/XML" .
 
-<http://purl.org/dc/terms> a eona:Ontology .
+<http://www.w3.org/2004/02/skos/core> a eona:Ontology ;
+    eona:hasBaseUri "http://www.w3.org/2004/02/skos/core" ;
+    eona:hasDomain "Data" ;
+    eona:hasDownloadUrl "https://www.w3.org/TR/skos-reference/skos.rdf" ;
+    eona:imports <http://purl.org/dc/terms>,
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns>,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2002/07/owl>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    eona:isNamed "Skos" ;
+    eona:isProvidedBy "W3C" ;
+    eona:isSerializedIn "RDF/XML" .
 
 xml: a eona:Ontology .
 
+<http://purl.org/dc/terms> a eona:Ontology .
+
 <http://www.w3.org/2001/XMLSchema> a eona:Ontology .
+
+<http://www.w3.org/2002/07/owl> a eona:Ontology .
 
 <http://www.w3.org/1999/02/22-rdf-syntax-ns> a eona:Ontology .
 
 <http://www.w3.org/2000/01/rdf-schema> a eona:Ontology .
-
-<http://www.w3.org/2002/07/owl> a eona:Ontology .
 

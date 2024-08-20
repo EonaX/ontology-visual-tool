@@ -17,9 +17,11 @@ set_page_config(layout="wide")
 
 st.title('Graph Visualizer')
 
-    
-import ontology_parser
-import kg_constructor
+update_kg = st.button('Update')    
+
+if update_kg:
+     import ontology_parser
+     import kg_constructor
 
 # Initializing
 

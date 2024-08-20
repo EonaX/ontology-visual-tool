@@ -14,11 +14,16 @@ from rdflib.namespace import RDF
 import streamlit.components.v1 as components
 from pyvis.network import Network
 import base64
-import ontology_parser
-import kg_constructor
 
 # Initializing
 set_page_config(layout="wide")
+
+update_kg = st.button('Update')
+
+if update_kg:
+    import ontology_parser
+    import kg_constructor
+
 
 g = Graph()
 EONA = Namespace("http://www.eona-x.eu/ontology/tracking#")
