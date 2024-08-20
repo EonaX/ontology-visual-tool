@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 1720px;
+                 height: 700px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Snap\nTransmodel Organisations", "label": "Snap\nTransmodel Organisations", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/dc/terms", "label": "http://purl.org/dc/terms", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Martin Hepp\nGoodrelations", "label": "Martin Hepp\nGoodrelations", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Xmlns\nFoaf", "label": "Xmlns\nFoaf", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nProv-O", "label": "W3C\nProv-O", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2006/vcard/ns", "label": "http://www.w3.org/2006/vcard/ns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2006/time", "label": "http://www.w3.org/2006/time", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nSkos", "label": "W3C\nSkos", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bernard Vatant\nVoaf", "label": "Bernard Vatant\nVoaf", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ian Davis\nVann", "label": "Ian Davis\nVann", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://spinrdf.org/spin", "label": "http://spinrdf.org/spin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://creativecommons.org/ns", "label": "http://creativecommons.org/ns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/vocab/frbr/core", "label": "http://purl.org/vocab/frbr/core", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2003/06/sw-vocab-status/ns", "label": "http://www.w3.org/2003/06/sw-vocab-status/ns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://spinrdf.org/sp", "label": "http://spinrdf.org/sp", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nWeb Annotation", "label": "W3C\nWeb Annotation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.openarchives.org/ore/terms", "label": "http://www.openarchives.org/ore/terms", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://pcdm.org/models", "label": "http://pcdm.org/models", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/dc/dcmitype", "label": "http://purl.org/dc/dcmitype", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/TR/annotation-vocab", "label": "http://www.w3.org/TR/annotation-vocab", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.iana.org/assignments/relation", "label": "http://www.iana.org/assignments/relation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/ns/auth/acl", "label": "http://www.w3.org/ns/auth/acl", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://iiif.io/api/presentation/2", "label": "http://iiif.io/api/presentation/2", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://rdfs.org/sioc/ns", "label": "http://rdfs.org/sioc/ns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/ns/activitystreams", "label": "http://www.w3.org/ns/activitystreams", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2011/content", "label": "http://www.w3.org/2011/content", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dublin Core\nMetadata Terms", "label": "Dublin Core\nMetadata Terms", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/ns/ldp", "label": "http://www.w3.org/ns/ldp", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2004/03/trix/rdfg-1", "label": "http://www.w3.org/2004/03/trix/rdfg-1", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://rdfs.org/sioc/services", "label": "http://rdfs.org/sioc/services", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2003/12/exif/ns", "label": "http://www.w3.org/2003/12/exif/ns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "file:///home/maxime/github/ontology-visual-tool/data/link", "label": "file:///home/maxime/github/ontology-visual-tool/data/link", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/2003/01/geo/wgs84_pos", "label": "http://www.w3.org/2003/01/geo/wgs84_pos", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/ontology/bibo", "label": "http://purl.org/ontology/bibo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://iiif.io/api/image/2", "label": "http://iiif.io/api/image/2", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://web.resource.org/cc", "label": "http://web.resource.org/cc", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/vocab/bio/0.1", "label": "http://purl.org/vocab/bio/0.1", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nOdrl", "label": "W3C\nOdrl", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://schema.org", "label": "http://schema.org", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nDcat", "label": "W3C\nDcat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "W3C\nData Quality", "label": "W3C\nData Quality", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/eis/vocab/daq", "label": "http://purl.org/eis/vocab/daq", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/linked-data/cube", "label": "http://purl.org/linked-data/cube", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.w3.org/ns/duv", "label": "http://www.w3.org/ns/duv", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Open Gis\nGeo Sparql", "label": "Open Gis\nGeo Sparql", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.opengis.net/ont/geosparql/1.0", "label": "http://www.opengis.net/ont/geosparql/1.0", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Schema.Org\nSchema.Org", "label": "Schema.Org\nSchema.Org", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://www.opengis.net/spec/geosparql/1.1/specification.html", "label": "http://www.opengis.net/spec/geosparql/1.1/specification.html", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://xmlns.com/wot/0.1", "label": "http://xmlns.com/wot/0.1", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pieter Colpaert\nOpening Hours", "label": "Pieter Colpaert\nOpening Hours", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "http://purl.org/dc/dcam", "label": "http://purl.org/dc/dcam", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Catena-X\nVehicle", "label": "Catena-X\nVehicle", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Catena-X\nCore", "label": "Catena-X\nCore", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "https://json-schema.org/draft/2020-12/schema", "label": "https://json-schema.org/draft/2020-12/schema", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Utel\nGtfs", "label": "Utel\nGtfs", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Snap\nTransmodel Organisations", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "Martin Hepp\nGoodrelations", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "Xmlns\nFoaf", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "W3C\nProv-O", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "http://www.w3.org/2006/vcard/ns", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "http://www.w3.org/2006/time", "width": 1}, {"from": "Snap\nTransmodel Organisations", "to": "W3C\nSkos", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "Ian Davis\nVann", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "Xmlns\nFoaf", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://spinrdf.org/spin", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://creativecommons.org/ns", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://purl.org/vocab/frbr/core", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://www.w3.org/2003/06/sw-vocab-status/ns", "width": 1}, {"from": "Bernard Vatant\nVoaf", "to": "http://spinrdf.org/sp", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.openarchives.org/ore/terms", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/2006/time", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://pcdm.org/models", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://purl.org/dc/dcmitype", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "W3C\nSkos", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/TR/annotation-vocab", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.iana.org/assignments/relation", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/ns/auth/acl", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://iiif.io/api/presentation/2", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://rdfs.org/sioc/ns", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/ns/activitystreams", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/2011/content", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "Martin Hepp\nGoodrelations", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "Dublin Core\nMetadata Terms", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/ns/ldp", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/2004/03/trix/rdfg-1", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://rdfs.org/sioc/services", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/2003/12/exif/ns", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "file:///home/maxime/github/ontology-visual-tool/data/link", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://www.w3.org/2003/01/geo/wgs84_pos", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://purl.org/ontology/bibo", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "http://iiif.io/api/image/2", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "Xmlns\nFoaf", "width": 1}, {"from": "W3C\nWeb Annotation", "to": "W3C\nProv-O", "width": 1}, {"from": "Ian Davis\nVann", "to": "http://web.resource.org/cc", "width": 1}, {"from": "Ian Davis\nVann", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Ian Davis\nVann", "to": "http://purl.org/vocab/bio/0.1", "width": 1}, {"from": "Ian Davis\nVann", "to": "Xmlns\nFoaf", "width": 1}, {"from": "W3C\nOdrl", "to": "http://www.w3.org/2006/vcard/ns", "width": 1}, {"from": "W3C\nOdrl", "to": "W3C\nSkos", "width": 1}, {"from": "W3C\nOdrl", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "W3C\nOdrl", "to": "http://schema.org", "width": 1}, {"from": "W3C\nOdrl", "to": "Xmlns\nFoaf", "width": 1}, {"from": "W3C\nOdrl", "to": "http://creativecommons.org/ns", "width": 1}, {"from": "W3C\nSkos", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "W3C\nDcat", "to": "W3C\nProv-O", "width": 1}, {"from": "W3C\nDcat", "to": "http://www.w3.org/2006/vcard/ns", "width": 1}, {"from": "W3C\nDcat", "to": "http://purl.org/dc/dcmitype", "width": 1}, {"from": "W3C\nDcat", "to": "W3C\nSkos", "width": 1}, {"from": "W3C\nDcat", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "W3C\nDcat", "to": "http://schema.org", "width": 1}, {"from": "W3C\nDcat", "to": "Xmlns\nFoaf", "width": 1}, {"from": "W3C\nData Quality", "to": "Ian Davis\nVann", "width": 1}, {"from": "W3C\nData Quality", "to": "Xmlns\nFoaf", "width": 1}, {"from": "W3C\nData Quality", "to": "http://purl.org/eis/vocab/daq", "width": 1}, {"from": "W3C\nData Quality", "to": "http://purl.org/linked-data/cube", "width": 1}, {"from": "W3C\nData Quality", "to": "http://www.w3.org/ns/duv", "width": 1}, {"from": "W3C\nData Quality", "to": "W3C\nSkos", "width": 1}, {"from": "W3C\nData Quality", "to": "Bernard Vatant\nVoaf", "width": 1}, {"from": "W3C\nData Quality", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "W3C\nData Quality", "to": "W3C\nWeb Annotation", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "W3C\nSkos", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "http://www.opengis.net/ont/geosparql/1.0", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "Schema.Org\nSchema.Org", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "Ian Davis\nVann", "width": 1}, {"from": "Open Gis\nGeo Sparql", "to": "http://www.opengis.net/spec/geosparql/1.1/specification.html", "width": 1}, {"from": "Xmlns\nFoaf", "to": "http://xmlns.com/wot/0.1", "width": 1}, {"from": "Xmlns\nFoaf", "to": "http://www.w3.org/2003/06/sw-vocab-status/ns", "width": 1}, {"from": "Xmlns\nFoaf", "to": "Dublin Core\nMetadata Terms", "width": 1}, {"from": "Pieter Colpaert\nOpening Hours", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Pieter Colpaert\nOpening Hours", "to": "Xmlns\nFoaf", "width": 1}, {"from": "Pieter Colpaert\nOpening Hours", "to": "Bernard Vatant\nVoaf", "width": 1}, {"from": "Pieter Colpaert\nOpening Hours", "to": "Ian Davis\nVann", "width": 1}, {"from": "Dublin Core\nMetadata Terms", "to": "W3C\nSkos", "width": 1}, {"from": "Dublin Core\nMetadata Terms", "to": "http://purl.org/dc/terms", "width": 1}, {"from": "Dublin Core\nMetadata Terms", "to": "http://purl.org/dc/dcam", "width": 1}, {"from": "Catena-X\nVehicle", "to": "Catena-X\nCore", "width": 1}, {"from": "Catena-X\nVehicle", "to": "Dublin Core\nMetadata Terms", "width": 1}, {"from": "Catena-X\nVehicle", "to": "https://json-schema.org/draft/2020-12/schema", "width": 1}, {"from": "Catena-X\nCore", "to": "Dublin Core\nMetadata Terms", "width": 1}, {"from": "Utel\nGtfs", "to": "http://schema.org", "width": 1}, {"from": "Utel\nGtfs", "to": "Dublin Core\nMetadata Terms", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
