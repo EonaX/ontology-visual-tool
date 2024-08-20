@@ -1,3 +1,23 @@
+[global]
+
+[logger]
+
+[client]
+toolbarMode = "minimal"
+
+[runner]
+
+[server]
+#address = "www.data.eona-x.eu"
+baseUrlPath = "data-quality-tool"
+
+[browser]
+serverAddress = "www.data.eona-x.eu"
+serverPort = 8502
+gatherUsageStats = false
+
+[mapbox]
+
 [theme]
 primaryColor="#5681d0"
 backgroundColor="#212750"
