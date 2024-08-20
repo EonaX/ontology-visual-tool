@@ -22,7 +22,7 @@ def set_page_config(layout="centered"):
     """
     
     st.set_page_config(
-        page_title="Real-Time Data Science Dashboard",
+        page_title="Ontology Visual Tool",
         page_icon="docs/logo-eona.png",
         layout=layout,
     )

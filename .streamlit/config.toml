@@ -9,11 +9,10 @@ toolbarMode = "minimal"
 
 [server]
 #address = "www.data.eona-x.eu"
-baseUrlPath = "data-quality-tool"
+baseUrlPath = "ontology-visual-tool"
 
 [browser]
-serverAddress = "www.data.eona-x.eu"
-serverPort = 8502
+#serverPort = 850
 gatherUsageStats = false
 
 [mapbox]

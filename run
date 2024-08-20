@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source ~/virtual_environments/ontology-visual-tool/bin/activate
+source /home/maxime/virtual_environments/ontology-visual-tool/bin/activate
 
 streamlit run gui.py
