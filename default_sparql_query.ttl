@@ -1,0 +1,13 @@
+CONSTRUCT
+{
+?provname eona:imports ?import.
+}
+WHERE
+{
+?s a eona:Ontology;
+eona:isNamed ?name;
+eona:isProvidedBy ?provider;
+eona:imports ?import.
+
+BIND(CONCAT(?provider, '\n', ?name) AS ?provname)
+} 

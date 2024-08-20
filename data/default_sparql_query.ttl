@@ -1,0 +1,21 @@
+CONSTRUCT
+{
+?provname eona:imports ?importProvname.
+}
+WHERE
+{
+?s a eona:Ontology;
+eona:isProvidedBy ?provider;
+eona:isNamed ?name ;
+eona:imports ?import.
+
+FILTER(!(?s = ?import))
+FILTER(!(?s = ?importProvname))
+
+BIND(IF(EXISTS {?import eona:isNamed ?importName ; eona:isProvidedBy ?importProvider}, CONCAT(?importProvider, '\n', ?importName), ?import) AS ?importProvname)
+
+
+BIND(CONCAT(?provider, '\n', ?name) AS ?provname)
+
+
+}
