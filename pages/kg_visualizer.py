@@ -31,9 +31,12 @@ g.parse("data/kg.ttl", format="ttl")
 col1, col2, col3 = st.columns([3, 2, 2])
 
 
+with open('data/default_sparql_query.ttl', 'r') as f:
+    default_query = f.read()
+
 with col1:
         
-    query = st.text_area(label='SPARQL Query', value = imports_further, height = 160)
+    query = st.text_area(label='SPARQL Query', value = default_query, height = 160)
     
     cola, colb = st.columns([2, 10])
     
@@ -47,7 +50,12 @@ with col1:
             
     with colb:
         
-        save_query = st.button('Save', key = 'save_query')      
+        save_query = st.button('Save', key = 'save_query')
+        
+        if save_query:
+            
+            with open('data/default_sparql_query.ttl', 'w') as f:
+                f.write(query)
 
 with col2:
     imports_further_button = st.button('Imports Further', key='imports_further_button')
