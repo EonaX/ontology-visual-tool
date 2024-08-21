@@ -13,13 +13,15 @@ from gui_functions import *
 from graph_functions import *
 from kg_constructor import set_uris
 from rdflib import Graph, Namespace
-
+from ontology_parser import add_record
 
 set_page_config()
 
 # variables
 
-df = pd.read_pickle('data/df.pkl')
+# df = pd.read_csv('data/df.csv')
+
+df = add_record()
 
 # page layout
 
@@ -30,12 +32,11 @@ st.title('Ontology Database Manager')
 
 st.header('Ontology Database Viewer')
 
-update = st.button('Update')
+#update = st.button('Update')
 
-if update:
-    df = None
-    import ontology_parser
-    df = pd.read_pickle('data/df.pkl')
+#if update:
+ #   import  ontology_parser
+    #df = pd.read_pickle('data/df.pkl')
 
 st.dataframe(df, use_container_width=True, 
              column_order=["provider", "name", "domain", "base_uri", "download_url", "syntax", "count_uri", "added_when"],
@@ -81,7 +82,7 @@ with col3:
 
     # Display
 
-st.image('data/kg.png')
+# st.image('data/kg.png')
 
     # ontology remover
 
