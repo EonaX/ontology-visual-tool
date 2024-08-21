@@ -46,9 +46,12 @@ query = st.text_area(label='SPARQL Query', value = default_query, height = 160)
 g = g.query(query, initNs = {'eona':EONA, 'rdf':RDF})
    
 subgraph = convert_to_nx(g)
-nx_graph = draw_graph(subgraph) 
+size_button = st.button('Sized Nodes')
 
-net = Network('700px', '1720px', directed=True)
+if size_button:
+    subgraph = size_by_degree(subgraph)
+
+net = Network('700px', width="100%", directed=True, bgcolor="#222222", font_color="white") 
 net.from_nx(subgraph)
 net.save_graph('data/mygraph.html')
 

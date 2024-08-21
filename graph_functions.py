@@ -335,3 +335,27 @@ def draw_graph(nx_graph, layout = 'spring'):
     plt.savefig('data/kg.png', format='png', transparent=True)
     
     return nx_graph
+
+def size_by_degree(g):
+    """
+    https://stackoverflow.com/questions/70438752/dynamic-node-sizes-in-pyvis
+
+    Parameters
+    ----------
+    g : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
+    scale=2.5 # Scaling the size of the nodes by 10*degree
+    d = dict(g.degree)
+    
+    #Updating dict
+    d.update((x, scale*y) for x, y in d.items())
+    
+    nx.set_node_attributes(g,d,'size')
+    
+    return g
